@@ -16,10 +16,9 @@ class Personaje:
         milagro = random.randint(-10, 0)
         ventaja = milagro + self.suerte
         if ventaja >= 1:
-            print(ventaja)
             return(ventaja)
             
         else:
             ventaja == 0
 
-sandra = Personaje('Sandra', 'Mujer', 'Humana', 6, 8, 9, 110)
+sandra = Personaje('Sandra', 'Mujer', 'Humana', 6, 8, 9, 5)
