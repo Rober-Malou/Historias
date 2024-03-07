@@ -23,6 +23,3 @@ class Personaje:
             ventaja == 0
 
 sandra = Personaje('Sandra', 'Mujer', 'Humana', 6, 8, 9, 110)
-
-culo =sandra.golpe_de_suerte() + 3
-print(culo)
