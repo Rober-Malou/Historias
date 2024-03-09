@@ -33,7 +33,7 @@ print('Para avanzar en el juego tendrás que escribir exactamente las palabras q
 
 #Inicio de la aventura
 def inicio():
-    print('Es una magnifica mañana de sábado en el reino. La reina Sandra se levanta en su castillo de la sierra y se asoma a su balcón a contemplar sus tierras, nada salvo bosque en el horizonte. Esta mañana ha decidido ir a dar un paseo por su magnifico bosque.')
+    print('Es una magnifica mañana de sábado en el reino. La reina Sandra se levanta en su castillo de la sierra y se asoma a su balcón a contemplar su reino. No es un reino demasiado grande, pero es de ella.\n Casi todo es bosque mágico, y salvo algún ocasional viajero o invitado no hay nadie en kilómetros a la redonda. Ahora que estas despierta tu.')
     decision = str(input('Quieres ir a "despertar" a la princesa, "desayunar", o "salir" a dar el paseo \n'))
     if decision == "despertar":
         el_despertar_de_valeria()
@@ -46,8 +46,7 @@ def inicio():
         decision()
 
 def el_despertar_de_valeria():
-    print('culo')
-    el_desayuno()
+    print('Te diriges hacia la habitación de la princesa, una vez dentro te paras un instante a contemplar la escena. Valeria esta dulcemente dormida completamente tranquila. Su habitación esta decorada con unicornios y cosas monas.\n ')
 
 def el_desayuno():
     print('caca')

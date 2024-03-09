@@ -1,26 +1,83 @@
-import random
-
-class Personaje:
-    def __init__(self, nombre, sexo, especie, fuerza, inteligencia, carisma, suerte):
-        self.nombre = nombre
-        self.sexo = sexo
-        self.especie = especie
-        self.fuerza = fuerza
-        self.inteligencia = inteligencia
-        self.carisma = carisma
-        self.suerte = suerte
-
-    def golpe_de_suerte(self):
-        milagro = random.randint(-10, 0)
-        ventaja = milagro + self.suerte
-        if ventaja >= 1:
-            return(ventaja)
-            
+def choice():
+    miembros = 0
+    def toreto(miembros):
+        if toreto == 0:
+            partner = input(str('"brian" "leti" "roman"'))
+            if partner == 'brian':
+                print(miembros)
+                brian()
+            elif partner == 'leti':
+                print(miembros)
+                leti()
+            elif partner == 'roman':
+                print(miembros)
+                roman()
+            else:
+                toreto()
+        elif toreto == 1:
+            partner = input(str('"leti" "roman"'))
+            if partner == 'leti':
+                print(miembros)
+                leti()
+            elif partner == 'roman':
+                print(miembros)
+                roman()
+            else:
+                toreto()
+        elif toreto == 2:
+            partner = input(str('"brian" "roman"'))
+            if partner == 'brian':
+                print(miembros)
+                brian()
+            elif partner == 'roman':
+                print(miembros)
+                roman()
+            else:
+                toreto()
+        elif toreto == 3:
+            partner = input(str('"roman"'))
+            if partner == 'roman':
+                print(miembros)
+                roman()
+            else:
+                toreto()
+        elif toreto == 4:
+            partner = input(str('"brian" "leti"'))
+            if partner == 'brian':
+                print(miembros)
+                brian()
+            elif partner == 'leti':
+                print(miembros)
+                leti()
+            else:
+                toreto()
+        elif toreto == 5:
+            partner = input(str('"leti"'))
+            if partner == 'leti':
+                print(miembros)
+                leti()
+            else:
+                toreto()
+        elif toreto == 6:
+            partner = input(str('"brian'))
+            if partner == 'brian':
+                print(miembros)
+                brian()
         else:
-            ventaja == 0
+            print('let\'s race')
+    def brian():
+        miembros =+ 1
+        print('let\'s go brother')
+        toreto()
 
-sandra = Personaje('Sandra', 'Mujer', 'Humana', 6, 8, 9, 5)
+    def leti():
+        miembros =+ 2
+        print('OK Dom')
+        toreto()
 
-camello = sandra
-
-print(vars(camello))
+    def roman():
+        miembros =+ 4
+        print('Look at my orange lambo')
+        toreto()
+    toreto()
+choice()
