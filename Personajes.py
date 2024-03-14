@@ -3,7 +3,7 @@ import random
 # Plantilla personajes
 
 class Personaje:
-    def __init__(self, nombre, sexo, especie, fuerza, inteligencia, carisma, suerte):
+    def __init__(self, nombre, sexo, especie, fuerza, inteligencia, carisma, suerte, activo):
         self.nombre = nombre
         self.sexo = sexo
         self.especie = especie
@@ -11,7 +11,7 @@ class Personaje:
         self.inteligencia = inteligencia
         self.carisma = carisma
         self.suerte = suerte
-
+        self.activo = activo
     def golpe_de_suerte(self):
         milagro = random.randint(-10, 0)
         ventaja = milagro + self.suerte
@@ -23,7 +23,7 @@ class Personaje:
 
 # Distintos personajes
 
-sandra = Personaje('Sandra', 'Mujer', 'Humana', 6, 8, 9, 5)
+sandra = Personaje('Sandra', 'Mujer', 'Humana', 6, 8, 9, 5, True)
 
 # Obertura
 print('Bienvenida, últimamente tu trabajo a sido muy duro, y el resto de tu vida también. No puedo hacer mucho, pero tampoco quiero no hacer nada. Espero que te guste y que perdones la infinidad de faltas de ortografía.')
@@ -34,7 +34,7 @@ print('Para avanzar en el juego tendrás que escribir exactamente las palabras q
 #Inicio de la aventura
 def inicio():
     print('Es una magnifica mañana de sábado en el reino. La reina Sandra se levanta en su castillo de la sierra y se asoma a su balcón a contemplar su reino. No es un reino demasiado grande, pero es de ella.\n Casi todo es bosque mágico, y salvo algún ocasional viajero o invitado no hay nadie en kilómetros a la redonda. Ahora que estas despierta tu.')
-    decision = str(input('Quieres ir a "despertar" a la princesa, "desayunar", o "salir" a dar el paseo \n'))
+    decision = str(input('¿Quieres ir a "despertar" a la princesa, "desayunar", o "salir" a dar el paseo? \n'))
     if decision == "despertar":
         el_despertar_de_valeria()
     elif decision == "desayunar":
@@ -47,6 +47,9 @@ def inicio():
 
 def el_despertar_de_valeria():
     print('Te diriges hacia la habitación de la princesa, una vez dentro te paras un instante a contemplar la escena. Valeria esta dulcemente dormida completamente tranquila. Su habitación esta decorada con unicornios y cosas monas.\n ')
+    decision =str(input('¿Quieres, despertarla "dulcemente", "rápidamente" o dejarla "dormir"?'))
+    if decision == 'dulcemente':
+        print('Te acercas dulcemente hacia la cama y le acaricias con ternura la mejilla, unos segundos después ella abre los ojos y te da los buenos días mientras se rasca los ojitos')
 
 def el_desayuno():
     print('caca')
