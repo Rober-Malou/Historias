@@ -1,7 +1,8 @@
 def choice():
     miembros = 0
+
     def toreto(miembros):
-        if toreto == 0:
+        if miembros == 0:
             partner = input(str('"brian" "leti" "roman"'))
             if partner == 'brian':
                 print(miembros)
@@ -13,8 +14,8 @@ def choice():
                 print(miembros)
                 roman()
             else:
-                toreto()
-        elif toreto == 1:
+                toreto(miembros)   
+        elif miembros == 1:
             partner = input(str('"leti" "roman"'))
             if partner == 'leti':
                 print(miembros)
@@ -23,8 +24,8 @@ def choice():
                 print(miembros)
                 roman()
             else:
-                toreto()
-        elif toreto == 2:
+                toreto(miembros)
+        elif miembros == 2:
             partner = input(str('"brian" "roman"'))
             if partner == 'brian':
                 print(miembros)
@@ -33,15 +34,15 @@ def choice():
                 print(miembros)
                 roman()
             else:
-                toreto()
-        elif toreto == 3:
+                toreto(miembros)
+        elif miembros == 3:
             partner = input(str('"roman"'))
             if partner == 'roman':
                 print(miembros)
                 roman()
             else:
-                toreto()
-        elif toreto == 4:
+                toreto(miembros)
+        elif miembros == 4:
             partner = input(str('"brian" "leti"'))
             if partner == 'brian':
                 print(miembros)
@@ -50,34 +51,43 @@ def choice():
                 print(miembros)
                 leti()
             else:
-                toreto()
-        elif toreto == 5:
+                toreto(miembros)
+        elif miembros == 5:
             partner = input(str('"leti"'))
             if partner == 'leti':
                 print(miembros)
                 leti()
             else:
-                toreto()
-        elif toreto == 6:
+                toreto(miembros)
+        elif miembros == 6:
             partner = input(str('"brian'))
             if partner == 'brian':
                 print(miembros)
                 brian()
+            else:
+                toreto(miembros)
         else:
             print('let\'s race')
+
     def brian():
-        miembros =+ 1
+        nonlocal miembros
+        miembros += 1
         print('let\'s go brother')
-        toreto()
+        toreto(miembros)
 
     def leti():
-        miembros =+ 2
+        nonlocal miembros
+        miembros += 2
         print('OK Dom')
-        toreto()
+        toreto(miembros)
 
     def roman():
-        miembros =+ 4
+        nonlocal miembros
+        miembros += 4
         print('Look at my orange lambo')
-        toreto()
-    toreto()
+        toreto(miembros)
+
+    toreto(miembros)
+
+
 choice()
