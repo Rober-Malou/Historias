@@ -25,6 +25,8 @@ class Personaje:
 
 sandra = Personaje('Sandra', 'Mujer', 'Humana', 6, 8, 9, 5, True)
 
+choice1 = 0
+
 # Obertura
 print('Bienvenida, últimamente tu trabajo a sido muy duro, y el resto de tu vida también. No puedo hacer mucho, pero tampoco quiero no hacer nada. Espero que te guste y que perdones la infinidad de faltas de ortografía.')
 
@@ -33,17 +35,46 @@ print('Para avanzar en el juego tendrás que escribir exactamente las palabras q
 
 #Inicio de la aventura
 def inicio():
-    print('Es una magnifica mañana de sábado en el reino. La reina Sandra se levanta en su castillo de la sierra y se asoma a su balcón a contemplar su reino. No es un reino demasiado grande, pero es de ella.\n Casi todo es bosque mágico, y salvo algún ocasional viajero o invitado no hay nadie en kilómetros a la redonda. Ahora que estas despierta tu.')
-    decision = str(input('¿Quieres ir a "despertar" a la princesa, "desayunar", o "salir" a dar el paseo? \n'))
-    if decision == "despertar":
-        el_despertar_de_valeria()
-    elif decision == "desayunar":
-        el_desayuno()
-    elif decision == "salir":
+    print('Es una magnifica mañana de sábado en el reino. La reina Sandra se levanta en su castillo de la sierra y se asoma a su balcón a contemplar su reino. No es un reino demasiado grande, pero es de ella.\n Casi todo es bosque mágico, y salvo algún ocasional viajero o invitado no hay nadie en kilómetros a la redonda. Ahora que tu estas despierta.')
+    decision1(choice1)
+
+#Primera decision del juego
+def decision1(choice1):
+    if choice1 == 0:
+        decision = str(input('¿Quieres ir a "despertar" a la princesa, "desayunar" o "salir" a dar el paseo? \n'))
+        if decision == 'despertar':
+            el_despertar_de_valeria()
+        elif decision == 'desayunar':
+            el_desayuno()
+        elif decision == 'salir':
+            entrada_al_bosque()
+        else:
+            print('Por el amor del dios tallarín, esa no es una de las opciones')
+            decision1()
+    elif choice1 == 1:
+        decision = str(input('¿Quieres ir a "desayunar" o "salir" a dar el paseo? \n'))
+        if decision == 'desayunar':
+            el_desayuno()
+        elif decision == 'salir':
+            entrada_al_bosque()
+        else:
+            print('Por el amor del dios tallarín, esa no es una de las opciones')
+            decision1()
+    elif choice1 == 2:
+        decision = str(input('¿Quieres ir a "despertar" a la princesa o "salir" a dar el paseo?'))
+        if decision == 'despertar':
+            el_despertar_de_valeria()
+        elif decision == 'salir':
+            entrada_al_bosque()
+        else:
+            print('Por el amor del dios tallarín, esa no es una de las opciones')
+            decision1()
+    elif choice1 == 3:
+        print('Ahora todo lo que queda es salir a dar un paseo.')
         entrada_al_bosque()
     else:
-        print('Por el amor del dios tallarín, esa no es una de las opciones')
-        decision()
+        print('Algo ha salido mal, el dios tallarín no me ha sonreído')
+        inicio()
 
 def el_despertar_de_valeria():
     print('Te diriges hacia la habitación de la princesa, una vez dentro te paras un instante a contemplar la escena. Valeria esta dulcemente dormida completamente tranquila. Su habitación esta decorada con unicornios y cosas monas.\n ')
