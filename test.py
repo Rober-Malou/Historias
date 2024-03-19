@@ -10,7 +10,7 @@ def choice():
             elif partner == 'leti':
                 print(miembros)
                 leti()
-            elif partner == 'ro    man':
+            elif partner == 'roman':
                 print(miembros)
                 roman()
             else:
