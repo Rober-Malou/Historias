@@ -1,4 +1,4 @@
-import random
+import random, emoji
 
 # Plantilla personajes
 
@@ -13,7 +13,7 @@ class Personaje:
         self.suerte = suerte
         self.activo = activo
 def golpe_de_suerte(self):
-    milagro = random.randint(-5, 0)
+    milagro = random.randint(-6, 0)
     ventaja = milagro + self.suerte
     if ventaja >= 1:
         return(ventaja)
@@ -23,7 +23,11 @@ def golpe_de_suerte(self):
 
 # Distintos personajes
 
-sandra = Personaje('Sandra', 'Mujer', 'Humana', 6, 8, 9, 5, True)
+sandra = Personaje('Sandra', 'Mujer', 'Humana', 6, 8, 7, 5, True)
+valeria = Personaje('Valeria', 'Mujer', 'Humana', 3, 6, 9, 8, False)
+
+Personajes_activos = [sandra]
+
 
 global choice1
 choice1 = 0
@@ -82,38 +86,84 @@ def el_despertar_de_valeria():
     print('Te diriges hacia la habitación de la princesa, una vez dentro te paras un instante a contemplar la escena. Valeria esta dulcemente dormida completamente tranquila. Su habitación esta decorada con unicornios y cosas monas.\n ')
     decision2()
 def decision2():
+    global choice1
     decision =str(input('¿Quieres, despertarla "dulcemente", "rápidamente" o dejarla "dormir"?\n'))
     if decision == 'dulcemente':
         print('Te acercas dulcemente hacia la cama y le acaricias con ternura la mejilla.')
         golpe_de_suerte(sandra)
         if golpe_de_suerte(sandra) >= 1:
             print('Unos segundos después ella abre los ojos y te da los buenos días. Se incorpora y te besa en la mejilla y dice. \n -¿Que vamos a hacer hoy?')
+            valeria.activo = True
             decision1(choice1)
         else:
             print('Parece estar demasiado dormida para que solo eso funcione.')
             decision2()
     elif decision == 'rápidamente':
-        print('Te acercas a la cama y le meneas el brazo con moderada energía')
+        print('Te acercas a la cama y le agitas el brazo con energía')
         golpe_de_suerte(sandra)
         if golpe_de_suerte(sandra) >= 1:
             print('Valeria se levanta sobresaltada mirando al rededor. Cuando por fin se ubica un poco te dice con voz de estar medio dormida. \n -¿Que vamos a hacer hoy?')
+            valeria.activo = True
             decision1(choice1)
+
         else:
             print('Parece estar demasiado dormida para que solo eso funcione.')
             decision2()
     elif decision == 'dormir':
+        choice1 -= 1
         print('No te sientes capaz de perturbarla con lo mona que esta.')
         decision1(choice1)
     else:
         print('Por el amor del dios tallarín, esa no es una de las opciones')
+        decision2()
 
 
 def el_desayuno():
-    print('caca')
+    global choice1
+    choice1 += 2
+    if valeria.activo == True:
+        print('Bajáis a la cocina del castillo, allí encontráis un pollo con una sola ceja y un huevo crudo(solo la yema y la clara), ambos con gorros de cocinero y el pollo lleva la cascara como pantalones. \n')
+        decision3()
+    else:
+        print('')
     decision1(choice1)
 
+def decision3 ():
+    decision= str(input('Shakipillo - ¿Que queréis desayunar hoy mamis? ¿Queréis "cereales", "bollos", o "huevos" con bacon?\n'))
+    if decision == 'cereales':
+        print('Gudetama - Que pereza.')
+        print('Se ponen a preparar el desayuno a toda velocidad, en menos de 30 segundos todo esta listo y os lo sirven en el patio. \n Desayunáis tranquilamente, con el sol dándoos en la cara. Al terminar os disponéis a dar un tranquilo paseo por el bosque.')
+        sandra.fuerza = 7
+        valeria.fuerza = 4
+        paseo_con_valeria()
+    elif decision == 'bollos':
+        print('Gudetama - Que pereza.')
+        print('Gudetama pone a precalentar el horno mientras Sakipillo abre el congelador y saca varias pastas de el. Las coloca en una bandeja y las mete en el horno, mientras las pastas se hacen os sirven zumo en el patio y esperáis contemplando la naturaleza.')
+        print('A los pocos minutos vienen con mini cruasanes, mantequilla y mermelada y varias mini napolitanas de chocolate. \n Al terminar el agradable desayuno os preparais para dar un paseo por el bosque.')
+        sandra.fuerza = 7
+        valeria.fuerza = 4
+        sandra.carisma = 8
+        valeria.carisma = 10
+        paseo_con_valeria()
+    elif decision == 'huevos':
+        print('Gudetama - Mal royo.')
+        print('Sakipillo - Pero Gudetama por fin mis mamis van a permitirte cumplir tu destino como tu querías.')
+        print('A Gudetama se le ilumina la cara, por fin podrá cumplir su destino. Se despide de los tres, se bebe un quenquito de salsa de soja y se va a la sartén. Mientras Sakipillo termina de hacer el desayuno, vosotras salís al patio a que os de el sol. A los pocos minutos Sakipillo trae zumo, huevos con bacon y un par de napolitanas de chocolate.\n Desayunáis tranquilamente admirando la naturaleza y al terminar decidís iros a dar un paseo por el bosque')
+        sandra.fuerza = 7
+        sandra.carisma = 8
+        sandra.suerte = 7
+        valeria.fuerza = 4
+        valeria.carisma = 10
+        valeria.suerte = 10
+        print(emoji.emojize(':confetti_ball::confetti_ball:Habéis recibido la bendición de destino cumplido(El dios tallarín os otorga mas suerte en vuestras futuras aventuras):confetti_ball::confetti_ball:'))
+        paseo_con_valeria()
+    else:
+        print('Por el amor del dios tallarín, esa no es una de las opciones')
+        decision3()        
+
+def paseo_con_valeria():
+    print(vars(sandra), vars(valeria))
 def entrada_al_bosque():
     print('pedo')
-    decision1(choice1)
 
 inicio()
