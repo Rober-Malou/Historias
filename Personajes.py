@@ -125,8 +125,8 @@ def el_desayuno():
         print('Bajáis a la cocina del castillo, allí encontráis un pollo con una sola ceja y un huevo crudo(solo la yema y la clara), ambos con gorros de cocinero y el pollo lleva la cascara como pantalones. \n')
         decision3()
     else:
-        print('')
-    decision1(choice1)
+        print('Bajas a la cocina del castillo, allí encuentras un pollo con una sola ceja y un huevo crudo(solo la yema y la clara), ambos con gorros de cocinero y el pollo lleva la cascara como pantalones. \n')
+        decision4()
 
 def decision3 ():
     decision= str(input('Shakipillo - ¿Que queréis desayunar hoy mamis? ¿Queréis "cereales", "bollos", o "huevos" con bacon?\n'))
@@ -160,6 +160,39 @@ def decision3 ():
     else:
         print('Por el amor del dios tallarín, esa no es una de las opciones')
         decision3()        
+
+def decision4():
+    decision= str(input('Shakipillo - ¿Que quieres desayunar hoy mami? ¿Quieres "cereales", "bollos", o "huevos" con bacon?\n'))
+    if decision == 'cereales':
+        print('Gudetama - Que pereza.')
+        print('Se ponen a preparar el desayuno a toda velocidad, en menos de 30 segundos todo esta listo y te lo sirven en el patio. \n Desayunas tranquilamente, con el sol dándote en la cara.')
+        print('Sakipillo - Le he preparado un tentempié a mi otra mami en caso de que quieran ir a dar un paseo juntas.')
+        sandra.fuerza = 7
+        valeria.fuerza = 4
+        decision1(choice1)
+    elif decision == 'bollos':
+        print('Gudetama - Que pereza.')
+        print('Gudetama pone a precalentar el horno mientras Sakipillo abre el congelador y saca varias pastas del mismo. Las coloca en una bandeja y las mete en el horno, mientras las pastas se hacen te sirven zumo en el patio y esperas contemplando la naturaleza.')
+        print('A los pocos minutos vienen con mini cruasanes, mantequilla y mermelada y varias mini napolitanas de chocolate.')
+        print('Sakipillo - Le he preparado un tentempié a mi otra mami en caso de que quieran ir a dar un paseo juntas.')
+        sandra.fuerza = 7
+        valeria.fuerza = 4
+        sandra.carisma = 8
+        decision1(choice1)
+    elif decision == 'huevos':
+        print('Gudetama - Mal royo.')
+        print('Sakipillo - Pero Gudetama por fin mami va a permitirte cumplir tu destino como tu querías.')
+        print('A Gudetama se le ilumina la cara, por fin podrá cumplir su destino. Se despide de los tres, se bebe un cuenquito de salsa de soja y se va a la sartén. Mientras Sakipillo termina de hacer el desayuno, sales al patio a que te de el sol. A los pocos minutos Sakipillo trae zumo, huevos con bacon y un par de napolitanas de chocolate.\n Desayunas tranquilamente admirando la naturaleza.')
+        print('Sakipillo - Le he preparado un tentempié a mi otra mami en caso de que quieran ir a dar un paseo juntas.')
+        sandra.fuerza = 7
+        sandra.carisma = 8
+        sandra.suerte = 7
+        valeria.fuerza = 4
+        print(emoji.emojize(':confetti_ball::confetti_ball:Has recibido la bendición de destino cumplido(El dios tallarín te otorga mas suerte en vuestras futuras aventuras):confetti_ball::confetti_ball:'))
+        decision1(choice1)
+    else:
+        print('Por el amor del dios tallarín, esa no es una de las opciones')
+        decision4()        
 
 def paseo_con_valeria():
     print(vars(sandra), vars(valeria))
