@@ -28,6 +28,7 @@ valeria = Personaje('Valeria', 'Mujer', 'Humana', 3, 6, 9, 8, False)
 
 Personajes_activos = [sandra]
 
+fallo = 'Por el amor del dios tallarín, esa no es una de las opciones'
 
 global choice1
 choice1 = 0
@@ -53,16 +54,16 @@ def decision1(choice1):
         elif decision == 'salir':
             entrada_al_bosque()
         else:
-            print('Por el amor del dios tallarín, esa no es una de las opciones')
+            print(fallo)
             decision1(choice1)
     elif choice1 == 1:
         decision = str(input('¿Quieres ir a "desayunar" o "salir" a dar el paseo? \n'))
         if decision == 'desayunar':
             el_desayuno()
         elif decision == 'salir':
-            entrada_al_bosque()
+            paseo_con_valeria()
         else:
-            print('Por el amor del dios tallarín, esa no es una de las opciones')
+            print(fallo)
             decision1(choice1)
     elif choice1 == 2:
         decision = str(input('¿Quieres ir a "despertar" a la princesa o "salir" a dar el paseo?\n'))
@@ -71,13 +72,13 @@ def decision1(choice1):
         elif decision == 'salir':
             entrada_al_bosque()
         else:
-            print('Por el amor del dios tallarín, esa no es una de las opciones')
+            print(fallo)
             decision1(choice1)
     elif choice1 == 3:
         print('Ahora todo lo que queda es salir a dar un paseo.')
         entrada_al_bosque()
     else:
-        print('Algo ha salido mal, el dios tallarín no me ha sonreído, en el gremio a esto lo lamamos bug.')
+        print('Algo ha salido mal, el dios tallarín no me ha sonreído, en el gremio a esto lo llamamos bug.')
         inicio()
 
 def el_despertar_de_valeria():
@@ -114,7 +115,7 @@ def decision2():
         print('No te sientes capaz de perturbarla con lo mona que esta.')
         decision1(choice1)
     else:
-        print('Por el amor del dios tallarín, esa no es una de las opciones')
+        print(fallo)
         decision2()
 
 
@@ -158,7 +159,7 @@ def decision3 ():
         print(emoji.emojize(':confetti_ball::confetti_ball:Habéis recibido la bendición de destino cumplido(El dios tallarín os otorga mas suerte en vuestras futuras aventuras):confetti_ball::confetti_ball:'))
         paseo_con_valeria()
     else:
-        print('Por el amor del dios tallarín, esa no es una de las opciones')
+        print(fallo)
         decision3()        
 
 def decision4():
@@ -191,11 +192,11 @@ def decision4():
         print(emoji.emojize(':confetti_ball::confetti_ball:Has recibido la bendición de destino cumplido(El dios tallarín te otorga mas suerte en vuestras futuras aventuras):confetti_ball::confetti_ball:'))
         decision1(choice1)
     else:
-        print('Por el amor del dios tallarín, esa no es una de las opciones')
+        print(fallo)
         decision4()        
 
 def paseo_con_valeria():
-    print(vars(sandra), vars(valeria))
+    print('Empezais a pasear, con el sol en la cara y el castillo a la espalda')
 def entrada_al_bosque():
     print('pedo')
 
