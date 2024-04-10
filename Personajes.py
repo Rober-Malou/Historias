@@ -24,7 +24,7 @@ def golpe_de_suerte(self):
 # Distintos personajes
 
 sandra = Personaje('Sandra', 'Mujer', 'Humana', 6, 8, 7, 5, True)
-valeria = Personaje('Valeria', 'Mujer', 'Humana', 3, 6, 9, 8, False)
+valeria = Personaje('Valeria', 'Mujer', 'Humana', 3, 6, 9, 6, False)
 
 Personajes_activos = [sandra]
 
@@ -152,10 +152,10 @@ def decision3 ():
         print('A Gudetama se le ilumina la cara, por fin podrá cumplir su destino. Se despide de los tres, se bebe un quenquito de salsa de soja y se va a la sartén. Mientras Sakipillo termina de hacer el desayuno, vosotras salís al patio a que os de el sol. A los pocos minutos Sakipillo trae zumo, huevos con bacon y un par de napolitanas de chocolate.\n Desayunáis tranquilamente admirando la naturaleza y al terminar decidís iros a dar un paseo por el bosque')
         sandra.fuerza = 7
         sandra.carisma = 8
-        sandra.suerte = 7
+        sandra.suerte = 6
         valeria.fuerza = 4
         valeria.carisma = 10
-        valeria.suerte = 10
+        valeria.suerte = 7
         print(emoji.emojize(':confetti_ball::confetti_ball:Habéis recibido la bendición de destino cumplido(El dios tallarín os otorga mas suerte en vuestras futuras aventuras):confetti_ball::confetti_ball:'))
         paseo_con_valeria()
     else:
@@ -187,7 +187,7 @@ def decision4():
         print('Sakipillo - Le he preparado un tentempié a mi otra mami en caso de que quieran ir a dar un paseo juntas.')
         sandra.fuerza = 7
         sandra.carisma = 8
-        sandra.suerte = 7
+        sandra.suerte = 6
         valeria.fuerza = 4
         print(emoji.emojize(':confetti_ball::confetti_ball:Has recibido la bendición de destino cumplido(El dios tallarín te otorga mas suerte en vuestras futuras aventuras):confetti_ball::confetti_ball:'))
         decision1(choice1)
@@ -196,7 +196,13 @@ def decision4():
         decision4()        
 
 def paseo_con_valeria():
-    print('Empezais a pasear, con el sol en la cara y el castillo a la espalda')
+    print('Empezáis a pasear, con el sol en la cara y el castillo a la espalda. Poco a poco os vais adentrando en el bosque, os encontráis ardillas escondiendo bellotas, pájaros sobrevolandoos.')
+    golpe_de_suerte(sandra)
+    if golpe_de_suerte == 0:
+        print('Mientras te sobrevuela, un pájaro te bombardea. En silencio le das las das las gracias a su tallarinesca magnificencia porque te acordaste de llevar algo de agua y unos pañuelos de papel. Te limpias y sigues con tu paseo.')
+    else:
+        print('Ves como uno de los pájaros aligera la carga justo donde tu estas, pero con unos reflejos felinos lo esquivas en el ultimo momento y sigues tan tranquila con tu paseo.')
+
 def entrada_al_bosque():
     print('pedo')
 
