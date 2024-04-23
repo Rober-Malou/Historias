@@ -90,4 +90,21 @@ def choice():
     toreto(miembros)
 
 
-choice()
+class Personaje:
+    def __init__(self, nombre, sexo, especie, fuerza, inteligencia, carisma, suerte, activo):
+        self.nombre = nombre
+        self.sexo = sexo
+        self.especie = especie
+        self.fuerza = fuerza
+        self.inteligencia = inteligencia
+        self.carisma = carisma
+        self.suerte = suerte
+        self.activo = activo
+
+sandra = Personaje('Sandra', 'Mujer', 'Humana', 6, 8, 7, 5, True)
+
+sandra.fuerza += 1
+
+print(vars (sandra))
+
+
