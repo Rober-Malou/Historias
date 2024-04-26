@@ -264,8 +264,7 @@ def el_allazgo_del_unicornio():
 def el_rescate_del_unicornio():
     print('Valeria intenta acariciar al animal, calmarlo, decirle que todo va a salir bien. El unicornio parece entender a la princesa y aparenta estar mas relajado.')
     print('La reina da una vuelta al rededor del animal y el árbol, cuidadosamente analizando la situación. Después de unos minutos decide que solo hay tres cosas que pueden intentar:')
-    suerte_sandra = golpe_de_suerte(sandra)
-    suerte_valeria = golpe_de_suerte(valeria)
+
     estrategia_de_rescate()
 def estrategia_de_rescate():
     decision = str(input('Levantar el árbol con "fuerza" bruta, levantar el árbol usando otro árbol o rama como "palanca" o intentar "llamar" mas tarde a los guardias forestales del vecino reino de España.\n'))
@@ -276,7 +275,8 @@ def estrategia_de_rescate():
         print('-A la de dos.')
         time.sleep(2)
         print('-Y a la de !!!!TREEEEES¡¡¡¡')
-
+        suerte_sandra = golpe_de_suerte(sandra)
+        suerte_valeria = golpe_de_suerte(valeria)
         fuerza = suerte_sandra + suerte_valeria + sandra.fuerza + valeria.fuerza
         if fuerza >= 16:
             print('El árbol empieza a crujir mientras lo levantan, apenas consiguen levantarlo cinco centímetros, pero es lo necesario para que el unicornio se pueda intentar incorporar, al hacerlo, termina haciendo que el árbol ruede al suelo quedando totalmente libre.')
