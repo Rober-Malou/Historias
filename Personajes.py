@@ -40,6 +40,9 @@ fallo = 'Por el amor del dios tallarín, esa no es una de las opciones'
 global choice1
 choice1 = 0
 
+global gudetama
+gudetama = 1
+
 # Obertura
 
 print('Vienvenid@ espero que disfrutes esta corta historia interactiva y que su Tallarisca magnificencia te guie por el buen camino.')
@@ -176,6 +179,8 @@ def decision3 ():
         valeria.fuerza += 1
         valeria.carisma += 1
         valeria.suerte += 1
+        global gudetama
+        gudetama -= 1
         print(emoji.emojize(':confetti_ball::confetti_ball:Sandra y Valeria reciben la bendición de destino cumplido. El dios tallarín les otorga mas suerte en futuras aventuras:confetti_ball::confetti_ball:'))
         paseo_con_valeria()
     else:
@@ -211,7 +216,10 @@ def decision4():
         sandra.carisma += 1
         sandra.suerte += 1
         valeria.fuerza += 1
+        global gudetama
+        gudetama -= 1
         print(emoji.emojize(':confetti_ball::confetti_ball:Sandra ha recibido la bendición de destino cumplido. El dios tallarín le otorga mas suerte en sus futuras aventuras.:confetti_ball::confetti_ball:'))
+
         decision1(choice1)
     else:
         print(fallo)
@@ -323,6 +331,47 @@ def estrategia_de_rescate():
 
 def llamada_a_la_policía():
     print('Llegando al castillo el teléfono de Sandra recupera la suficiente cobertura como para poder hacer una llamada. Dado que es una reina, Sandra no llama a la guardia forestal directamente, eso es poca cosa para ella, ella llama al ministerio de exteriores español, al despacho del ministro nada menos.')
+    print('- Despacho del Ministro de Exteriores. El señor ministro ahora esta ocupado en una reunión. Si es tan amable de dejar un mensaje conmigo, su secretaria, se lo haré llegar lo antes posible.')
+    print('-Buenos días. Soy su majestad la reina Sandra legitima soberana de HASTA EL COÑO Y MAS ALLÁ. Necesito hablar inmediatamente con el señor ministro. Tengo una situación de máxima urgencia asi que paseme con el INMEDIATAMENTE.')
+    suerte_sandra = golpe_de_suerte(sandra)
+    negociación = suerte_sandra + sandra.carisma
+    if negociación >= 9:
+        print('-Discúlpeme majestad. Enseguida le paso.')
+        print('-Ministro de exteriores al habla, dígame majestad.')
+        print('-Necesito inmediatamente que manden un equipo de rescate de guardias forestales. Tenemos un unicornio atrapado bajo un árbol en el bosque del reino.')
+        print('-¿Disculpe?¿Un unicornio ha dicho?No quisiera sonar irrespetuoso o insinuar nada, pero los unicornios no existen majestad.')
+        print('-Puedes mandar un equipo de rescate inmediatamente para salvar a ese unicornio, o puedes explicarle a los españoles porque ya no se venden mis torrijas en territorio nacional, los franceses llevan haciéndome ofertas años y están dispuestos a pagar mejor que vosotros. La única razón por la que no había aceptado aun es porque son franceses, pero eso puede cambiar en cualquier momento.')
+        print('-Discúlpeme majestad, por su puesto majestad, inmediatamente majestad. Estarán allí lo antes posible.')
+        print('-Y acompañados de una disculpa suya, escrita a mano, firmada y sincera.')
+        print('Por supuesto majestad, estarán en la puerta de su castillo lo antes posible.')
+        llegada_de_la_ayuda()
+    else:
+        print('-Disculpe "alteza" estoy bastante segura de que es país no existe y en el ministerio no apreciamos las bromas telefónicas. Puede decirme quien es y que quiere o haga el favor de dejar la linea libre, que esto es un ministerio.')
+        print('-Mira niña voy a darte cinco minutos para que uses Google. Yo espero.')
+        time.sleep(5)
+        print('Discúlpeme alteza, en seguida la paso.')
+        print('-Ministro de exteriores al habla, dígame majestad.')
+        print('-Necesito inmediatamente que manden un equipo de rescate de guardias forestales. Tenemos un unicornio atrapado bajo un árbol en el bosque del reino.')
+        print('-¿Disculpe?¿Un unicornio ha dicho?No quisiera sonar irrespetuoso o insinuar nada, pero los unicornios no existen majestad.')
+        print('-Puedes mandar un equipo de rescate inmediatamente para salvar a ese unicornio, o puedes explicarle a los españoles porque ya no se venden mis torrijas en territorio nacional, los franceses llevan haciéndome ofertas años y están dispuestos a pagar mejor que vosotros. La única razón por la que no había aceptado aun es porque son franceses, pero eso puede cambiar en cualquier momento.')
+        print('-Discúlpeme majestad, por su puesto majestad, inmediatamente majestad. Estarán allí lo antes posible.')
+        print('-Y acompañados de una disculpa suya, escrita a mano, firmada y sincera.')
+        print('Por supuesto majestad, estarán en la puerta de su castillo lo antes posible.')
+        llegada_de_la_ayuda()
+
+def llegada_de_la_ayuda(gudetama):
+    print('Sandra y Valeria se sientan nerviosamente a esperar.')
+    if gudetama == 0:
+        print('Sakipillo les trae una selección de bebidas (zumos, coca-cola, fanta, café, etc) y les sirve algo ellas mientras esperan a que lleguen los refuerzos.')
+    elif gudetama == 1:
+        print('Sakipillo y Gudetama les traen una selección de bebidas (zumos, coca-cola, fanta, café, etc) y les sirven algo mientras ellas esperan a que lleguen los refuerzos.')
+    else:
+        print('No tengo ni idea de que ha pasado aquí, la idea es que si elegiste comerte a Gudetama solo Sakipillo les llevaría unas bebidas, si no los 2, pero algo salio mal.')
+    print('A las pocas horas llegaron los guardias forestales. Llegaron en varias camionetas llenas hasta arriba de motosierras, poleas, cuerdas, sierras... Todo lo que puedas imaginar necesario o util para rescatar a cualquiera o cualquier cosa de debajo de un árbol.')
+    print('La reina y la princesa rápidamente les guían hacia el lugar donde el unicornio esta atrapado. Cuando llegan al lugar Sandra y Valeria rápidamente van a confortar y calmar a la criatura mientras los guardias forestales se ponen manos a la obra.')
+    print('Un pequeño grupo vuelve a por las herramientas necesarias que estaban en las camionetas, el resto se pone a calzar y montar soportes para sujetar el árbol para aliviar la presión del animal y protegerlo en caso de que algo saliera mal durante el rescate.')
+
+
 def bosque_profundo():
     print('teta')       
 def ascenso_a_la_montaña():
