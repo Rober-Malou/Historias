@@ -1,6 +1,6 @@
 # Librerías importadas
 
-import random, emoji
+import random, emoji, time
 
 # Plantilla personajes
 
@@ -264,32 +264,67 @@ def el_allazgo_del_unicornio():
 def el_rescate_del_unicornio():
     print('Valeria intenta acariciar al animal, calmarlo, decirle que todo va a salir bien. El unicornio parece entender a la princesa y aparenta estar mas relajado.')
     print('La reina da una vuelta al rededor del animal y el árbol, cuidadosamente analizando la situación. Después de unos minutos decide que solo hay tres cosas que pueden intentar:')
-    decision = str(input('Levantar el árbol con "fuerza" bruta, levantar el árbol usando otro árbol o rama como "palanca" o intentar "llamar" mas tarde a los guardias forestales del vecino reino de España.'))
+    suerte_sandra = golpe_de_suerte(sandra)
+    suerte_valeria = golpe_de_suerte(valeria)
+    estrategia_de_rescate()
+def estrategia_de_rescate():
+    decision = str(input('Levantar el árbol con "fuerza" bruta, levantar el árbol usando otro árbol o rama como "palanca" o intentar "llamar" mas tarde a los guardias forestales del vecino reino de España.\n'))
     if decision == 'fuerza':
         print('La reina le dice a la princesa que valla a donde esta ella y que a la de tres las dos van a empujar el árbol hacia arriba y un lado y que con un poco de suerte el unicornio podrá dar el ultimo empujón y liberarse.')
-        print('Sandra:\n-A la de una.\n-A la de dos\n-Y a la de !!!!TREEEEES¡¡¡¡')
-        suerte1 = golpe_de_suerte(sandra)
-        suerte2 = golpe_de_suerte(valeria)
-        fuerza = suerte1 + suerte2 + sandra.fuerza + valeria.fuerza
+        print('Sandra:\n-A la de una.')
+        time.sleep(2)
+        print('-A la de dos.')
+        time.sleep(2)
+        print('-Y a la de !!!!TREEEEES¡¡¡¡')
+
+        fuerza = suerte_sandra + suerte_valeria + sandra.fuerza + valeria.fuerza
         if fuerza >= 16:
             print('El árbol empieza a crujir mientras lo levantan, apenas consiguen levantarlo cinco centímetros, pero es lo necesario para que el unicornio se pueda intentar incorporar, al hacerlo, termina haciendo que el árbol ruede al suelo quedando totalmente libre.')
-            print('El unicornio se mantiene erguido y orgulloso contemplando a sus rescatadoras. Amistosamente se acerca primero a la princesa y luego a la reina y gacha la cabeza como haciendo una reverencia y tocándolas levemente con el cuerno en la frente.')
+            print('El unicornio se mantiene erguido y orgulloso contemplando a sus rescatadoras. Amistosamente se acerca primero a la princesa y luego a la reina y gacha la cabeza como haciendo una reverencia y las acaricia suavemente con el cuerno en la frente.')
             print('Cuando el cuerno las roza, puede verse por un instante un destello de luz, casi como un arcoíris. Después se aleja trotando alegremente por el bosque rezumando felicidad y magia por todo su ser.')
             print(':confetti_ball::confetti_ball:Sandra y Valeria han recibido la bendición de la magia del unicornio. A partir de ahora la suerte les sonreirá aun mas')
             sandra.suerte += 1
             valeria.suerte += 1
+            bosque_profundo()
         else:
             print('El árbol empieza a crujir mientras lo levantan pero apenas se mueve, el unicornio intenta revolverse y levantarse sin éxito. Después de unos segundos no les queda mas remedio que rendirse.')
             print('Sandra entonces intenta buscar a su alrededor por si hay algún tronco o palo con el que hacer palanca pero sin éxito no quedándoles más remedio que volver al castillo a llamar a los guardas forestales.')
             print('Se despiden del unicornio prometíendole volver con ayuda y se dirigen de vuelta al castillo donde hay cobertura.')
-            llamada_a_la_policia()
+            llamada_a_la_policía()
     elif decision == 'palanca':
-        print('Sandra se pone a buscar una rama gruesa o un árbol pequeño para poder usar como palanca mientras Valeria sigue manteniendo al unicornio tranquilo y acompañado. Unos minutos después la reina vuelve con una rama que parece lo bastante gruesa y fuerte para la tarea.')
+        print('Sandra se pone a buscar una rama gruesa o un árbol pequeño para poder usar como palanca mientras Valeria sigue manteniendo al unicornio tranquilo y acompañado. Unos minutos después la reina vuelve con una rama que parece lo bastante gruesa y fuerte para la tarea.')    
+        print('Entre las dos encuentran un lugar que parece bueno para colocar la rama y creen que no se va a deslizar.')
+        print('Sandra:\n-A la de una.')
+        time.sleep(2)
+        print('-A la de dos.')
+        time.sleep(2)
+        print('-Y a la de !!!!TREEEEES¡¡¡¡')
 
+        inteligencia = suerte_sandra + suerte_valeria + sandra.inteligencia + valeria.inteligencia
+        if inteligencia >= 16:
+            print('Las dos a la vez empujan el palo hacia arriba. El palo cruje y parece que se va a romper pero consiguen levantar lo bastante para que el unicornio se revuelva y consiga salir de debajo del árbol.')
+            print('El unicornio se mantiene erguido y orgulloso contemplando a sus rescatadoras. Amistosamente se acerca primero a la princesa y luego a la reina y gacha la cabeza como haciendo una reverencia y las acaricia suavemente con el cuerno en la frente.')
+            print('Cuando el cuerno las roza, puede verse por un instante un destello de luz, casi como un arcoíris. Después se aleja trotando alegremente por el bosque rezumando felicidad y magia por todo su ser.')
+            print(':confetti_ball::confetti_ball:Sandra y Valeria han recibido la bendición de la magia del unicornio. A partir de ahora la suerte les sonreirá aun mas')
+            sandra.suerte += 1
+            valeria.suerte += 1
+            bosque_profundo()
+        else:
+            print('Empiezan a empujar el palo hacia arriba pero enseguida se resbala. Al caerse, el palo que estaban usando se parte y queda totalmente inutilizable.')
+            print('Intentan buscar otro palo que les sirva pero sin suerte no quedándoles más remedio que volver al castillo a llamar a los guardas forestales.')
+            print('Se despiden del unicornio prometíendole volver con ayuda y se dirigen de vuelta al castillo donde hay cobertura.')
+            llamada_a_la_policía()
+    elif decision == 'llamada':
+        print('La reina y la princesa después de considerar sus opciones llegan a la conclusión de que su mejor opción es llamar a la guardia forestal del reino de España. Se despiden del unicornio augurándole que volverán a ayudarlo y comienzan a caminar dirección al castillo, donde hay cobertura.')
+        llamada_a_la_policía()
+    else:
+        print(fallo)
+        estrategia_de_rescate()
 
-
-def llamada_a_la_policia():
-    print('pis')            
+def llamada_a_la_policía():
+    print('Llegando al castillo el teléfono de Sandra recupera la suficiente cobertura como para poder hacer una llamada. Dado que es una reina, Sandra no llama a la guardia forestal directamente, eso es poca cosa para ella, ella llama al ministerio de exteriores español, al despacho del ministro nada menos.')
+def bosque_profundo():
+    print('teta')       
 def ascenso_a_la_montaña():
     print('culo')
 

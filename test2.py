@@ -1,4 +1,4 @@
-import random
+import random, time
 
 class Personaje:
     def __init__(self, nombre, sexo, especie, fuerza, inteligencia, carisma, suerte, activo):
@@ -24,14 +24,25 @@ suerte_sandra = golpe_de_suerte(sandra)
 
 
 print(suerte_sandra)
+time.sleep(2)
 print(suerte_sandra)
+time.sleep(2)
 print(suerte_sandra)
+time.sleep(2)
 print(suerte_sandra)
+time.sleep(2)
 print(suerte_sandra)
+time.sleep(2)
 print(suerte_sandra)
+time.sleep(2)
 print(suerte_sandra)
+time.sleep(2)
 print(suerte_sandra)
+time.sleep(2)
 print(suerte_sandra)
+time.sleep(2)
 print(suerte_sandra)
+time.sleep(2)
 print(suerte_sandra)
+time.sleep(2)
 print(suerte_sandra)
