@@ -1,6 +1,6 @@
 # Librerías importadas
 
-import random, emoji, time
+import random, emoji, time, sys
 
 # Plantilla personajes
 
@@ -20,11 +20,14 @@ class Personaje:
 def golpe_de_suerte(self):
     milagro = random.randint(-7, 0)
     ventaja = milagro + self.suerte
-    if ventaja >= 1:
-        return(ventaja)
-          
+    return(ventaja)
+
+def ataque_aéreo():
+    golpe_de_suerte(sandra)
+    if golpe_de_suerte(sandra) >= 1:
+        print('Mientras unos pájaros las sobrevuelan, uno de ello que había comido unas semillas en mal estado toma la decision de "bombardearlas". En silencio, Sandra le da las gracias a su tallarinesca magnificencia por acordarse de llevar algo de agua y unos pañuelos de papel. Se limpia y sigues con su paseo.')
     else:
-        return(ventaja == 0)
+        print('Sandra y Valeria ven como uno de los pájaros aligera su carga justo donde están ellas, pero gracias a sus reflejos felinos lo esquivan en el ultimo momento y siguen tan tranquila con tu paseo.')
 
 # Distintos personajes
 
@@ -36,12 +39,14 @@ valeria = Personaje('Valeria', 'Mujer', 'Humana', 3, 6, 9, 6, False)
 fallo = 'Por el amor del dios tallarín, esa no es una de las opciones'
 
 # Variables de contador
+global unicornio_salvado
+unicornio_salvado = False
 
 global choice1
 choice1 = 0
 
 global gudetama
-gudetama = 1
+gudetama = True
 
 # Obertura
 
@@ -112,7 +117,8 @@ def decision2():
     if decision == 'dulcemente':
         print('Te acercas dulcemente hacia la cama y le acaricias con ternura la mejilla.')
         golpe_de_suerte(sandra)
-        if golpe_de_suerte(sandra) >= 1:
+        despertar = golpe_de_suerte(sandra)
+        if despertar >= 1:
             print('Unos segundos después Valeria abre los ojos y le da los buenos días a Sandra. Se incorpora, le besa en la mejilla y dice: \n -¿Que vamos a hacer hoy?')
             valeria.activo = True
             decision1(choice1)
@@ -122,7 +128,8 @@ def decision2():
     elif decision == 'rápidamente':
         print('La reina le agita el brazo a la princesa.')
         golpe_de_suerte(sandra)
-        if golpe_de_suerte(sandra) >= 1:
+        despertar = golpe_de_suerte(sandra)
+        if despertar >= 0:
             print('Valeria se levanta sobresaltada mirando al rededor. Cuando por fin se ubica un poco le dice con voz de estar medio dormida a su madre. \n -¿Que vamos a hacer hoy mami?')
             valeria.activo = True
             decision1(choice1)
@@ -180,7 +187,7 @@ def decision3 ():
         valeria.carisma += 1
         valeria.suerte += 1
         global gudetama
-        gudetama -= 1
+        gudetama = False
         print(emoji.emojize(':confetti_ball::confetti_ball:Sandra y Valeria reciben la bendición de destino cumplido. El dios tallarín les otorga mas suerte en futuras aventuras:confetti_ball::confetti_ball:'))
         paseo_con_valeria()
     else:
@@ -217,7 +224,7 @@ def decision4():
         sandra.suerte += 1
         valeria.fuerza += 1
         global gudetama
-        gudetama -= 1
+        gudetama = False
         print(emoji.emojize(':confetti_ball::confetti_ball:Sandra ha recibido la bendición de destino cumplido. El dios tallarín le otorga mas suerte en sus futuras aventuras.:confetti_ball::confetti_ball:'))
 
         decision1(choice1)
@@ -229,11 +236,7 @@ def decision4():
 
 def paseo_con_valeria():
     print('Empiezan a pasear, con el sol en la cara y el castillo a la espalda. Poco a poco se van adentrando en el bosque, se encuentran ardillas escondiendo bellotas, pájaros sobrevolandolas y todo tipo de arboles y flores.')
-    golpe_de_suerte(sandra)
-    if golpe_de_suerte == 0:
-        print('Mientras unos pájaros las sobrevuelan, uno de ello que había comido unas semillas en mal estado toma la decision de "bombardearlas". En silencio, Sandra le da las gracias a su tallarinesca magnificencia por acordarse de llevar algo de agua y unos pañuelos de papel. Se limpia y sigues con su paseo.')
-    else:
-        print('Sandra y Valeria ven como uno de los pájaros aligera su carga justo donde están ellas, pero gracias a sus reflejos felinos lo esquivan en el ultimo momento y siguen tan tranquila con tu paseo.')
+    ataque_aéreo()
     print('Mientras se adentran en el bosque, ahora con un ojo en el cielo, van tranquilamente charlando, disfrutando de la compañía mutua. A lo lejos, apartado del sendero ven un bulto extraño que no pueden identificar bien.')
     vais_o_seguís()
 
@@ -244,7 +247,7 @@ def vais_o_seguís():
     if decision == 'acerquen':
         el_allazgo_del_unicornio()
     elif decision == 'sigan':
-        ascenso_a_la_montaña()
+        ascenso_a_la_montaña(unicornio_salvado)
     else:
         print(fallo)
         vais_o_seguís()
@@ -254,10 +257,10 @@ def vais_o_seguís():
 def el_allazgo_del_unicornio():
     print('Se acercan cuidadosamente pero el bosque es demasiado denso y no pueden hacerlo muy deprisa.')
     golpe_de_suerte(valeria)
-    if golpe_de_suerte == 0:
+    if golpe_de_suerte(valeria) <= 0:
         print('Valeria intenta pasar por encima de una rama, desafortunadamente se le engancha el pie de atrás al intentar pasarla. Al caerse se raspa la rodilla y se hace sangre. Empieza a llorar hasta que su madre va a verla. ')
         golpe_de_suerte(sandra)
-        if golpe_de_suerte ==0:
+        if golpe_de_suerte(sandra) <= 0:
             print('La reina se acerca, limpia la herida he intenta cubrirla con una tirita que lleva en el bolso. Desgraciadamente el raspón es demasiado grande y no queda totalmente cubierto.')
             valeria.fuerza -= 1
         else:
@@ -272,8 +275,8 @@ def el_allazgo_del_unicornio():
 def el_rescate_del_unicornio():
     print('Valeria intenta acariciar al animal, calmarlo, decirle que todo va a salir bien. El unicornio parece entender a la princesa y aparenta estar mas relajado.')
     print('La reina da una vuelta al rededor del animal y el árbol, cuidadosamente analizando la situación. Después de unos minutos decide que solo hay tres cosas que pueden intentar:')
-
     estrategia_de_rescate()
+
 def estrategia_de_rescate():
     decision = str(input('Levantar el árbol con "fuerza" bruta, levantar el árbol usando otro árbol o rama como "palanca" o intentar "llamar" mas tarde a los guardias forestales del vecino reino de España.\n'))
     if decision == 'fuerza':
@@ -293,7 +296,9 @@ def estrategia_de_rescate():
             print(':confetti_ball::confetti_ball:Sandra y Valeria han recibido la bendición de la magia del unicornio. A partir de ahora la suerte les sonreirá aun mas')
             sandra.suerte += 1
             valeria.suerte += 1
-            bosque_profundo()
+            global unicornio_salvado
+            unicornio_salvado = True
+            ascenso_a_la_montaña(unicornio_salvado)
         else:
             print('El árbol empieza a crujir mientras lo levantan pero apenas se mueve, el unicornio intenta revolverse y levantarse sin éxito. Después de unos segundos no les queda mas remedio que rendirse.')
             print('Sandra entonces intenta buscar a su alrededor por si hay algún tronco o palo con el que hacer palanca pero sin éxito no quedándoles más remedio que volver al castillo a llamar a los guardas forestales.')
@@ -316,7 +321,9 @@ def estrategia_de_rescate():
             print(':confetti_ball::confetti_ball:Sandra y Valeria han recibido la bendición de la magia del unicornio. A partir de ahora la suerte les sonreirá aun mas')
             sandra.suerte += 1
             valeria.suerte += 1
-            bosque_profundo()
+            global unicornio_salvado
+            unicornio_salvado = True
+            ascenso_a_la_montaña(unicornio_salvado)
         else:
             print('Empiezan a empujar el palo hacia arriba pero enseguida se resbala. Al caerse, el palo que estaban usando se parte y queda totalmente inutilizable.')
             print('Intentan buscar otro palo que les sirva pero sin suerte no quedándoles más remedio que volver al castillo a llamar a los guardas forestales.')
@@ -335,7 +342,7 @@ def llamada_a_la_policía():
     print('-Buenos días. Soy su majestad la reina Sandra legitima soberana de HASTA EL COÑO Y MAS ALLÁ. Necesito hablar inmediatamente con el señor ministro. Tengo una situación de máxima urgencia asi que paseme con el INMEDIATAMENTE.')
     suerte_sandra = golpe_de_suerte(sandra)
     negociación = suerte_sandra + sandra.carisma
-    if negociación >= 9:
+    if negociación > 8:
         print('-Discúlpeme majestad. Enseguida le paso.')
         print('-Ministro de exteriores al habla, dígame majestad.')
         print('-Necesito inmediatamente que manden un equipo de rescate de guardias forestales. Tenemos un unicornio atrapado bajo un árbol en el bosque del reino.')
@@ -361,23 +368,45 @@ def llamada_a_la_policía():
 
 def llegada_de_la_ayuda(gudetama):
     print('Sandra y Valeria se sientan nerviosamente a esperar.')
-    if gudetama == 0:
+    if gudetama == False:
         print('Sakipillo les trae una selección de bebidas (zumos, coca-cola, fanta, café, etc) y les sirve algo ellas mientras esperan a que lleguen los refuerzos.')
-    elif gudetama == 1:
+    elif gudetama == True:
         print('Sakipillo y Gudetama les traen una selección de bebidas (zumos, coca-cola, fanta, café, etc) y les sirven algo mientras ellas esperan a que lleguen los refuerzos.')
     else:
         print('No tengo ni idea de que ha pasado aquí, la idea es que si elegiste comerte a Gudetama solo Sakipillo les llevaría unas bebidas, si no los 2, pero algo salio mal.')
     print('A las pocas horas llegaron los guardias forestales. Llegaron en varias camionetas llenas hasta arriba de motosierras, poleas, cuerdas, sierras... Todo lo que puedas imaginar necesario o util para rescatar a cualquiera o cualquier cosa de debajo de un árbol.')
     print('La reina y la princesa rápidamente les guían hacia el lugar donde el unicornio esta atrapado. Cuando llegan al lugar Sandra y Valeria rápidamente van a confortar y calmar a la criatura mientras los guardias forestales se ponen manos a la obra.')
     print('Un pequeño grupo vuelve a por las herramientas necesarias que estaban en las camionetas, el resto se pone a calzar y montar soportes para sujetar el árbol para aliviar la presión del animal y protegerlo en caso de que algo saliera mal durante el rescate.')
+    print('Después atan unas cuerdas al árbol y las pasan por unas poleas. Cuando están firmemente tensadas y sujetas al suelo empiezan primero a cortar ramas y demás cosas que podrían resultar peligrosas. Cuando todo eso por fin esta echo empiezan a cortar una gran sección del árbol.')
+    print('Cuando por fin terminan de cortar el tronco lo levantan con ayuda de las poleas. En el momento en el que unicornio tiene suficiente espacio para moverse se ve un cegador destello de luz arcoíris, para cuando los allí presentes pudieron recuperar la vista no había rastro del unicornio por ninguna parte.')
+    print('La princesa y la reina volvieron con los guardas al palacio. Al llegar los guardas forestales hicieron un saludo militar y pusieron rumbo para España')
+    print('Sandra y Valeria se dan cuenta de lo tarde que es, y se preparan para cenar e irse a la cama con la alegría de haber sido capaces de ayudar a una criatura tan magnifica. Desde ese dia y como agradecimiento, todos los días al despertar, verían como un cálido arcoíris entraba por su ventana')
+    print('\n\n\n\n\n\n\n\n\n:confetti_ball::confetti_ball::confetti_ball::confetti_ball:!!!!HAS FINALIZADO LA RUTA DE RESCATAR AL UNICORNIO CON AYUDA Y VALERIA¡¡¡¡:confetti_ball::confetti_ball::confetti_ball::confetti_ball:')
+    
+    
+def ascenso_a_la_montaña(unicornio_salvado):
+    if unicornio_salvado == True:
+        print('Con la alegría de haber podido ayudar al unicornio y la sensación dentro de sus corazones de que su suerte había cambiado ligeramente para mejor, Sandra y Valeria vuelven al sendero y lo continúan alegremente. Lo mas curioso es de todo es que la reina empezó a notar que los pájaros ya no las sobrevolaban, quizá el unicornio hizo algo que impide el bombardeo aviario, al menos en un futuro cercano.')
+    else:
+        print('Con la precaución por bandera y la seguridad de Valeria en mente la reina decidió ignorar el sospechoso bulto en el bosque y continuar con su camino.')
+        ataque_aéreo()
+    
+    
 
-
-def bosque_profundo():
-    print('teta')       
-def ascenso_a_la_montaña():
-    print('culo')
+    
 
 def entrada_al_bosque():
     print('pedo')
 
+def fin_del_juego():
+    que_hacer = input(str('¿Quieres volver a "jugar" o "dejarlo" por el momento?\n'))
+    if que_hacer == 'jugar':
+        inicio()
+    elif que_hacer == 'dejarlo':
+        print('Hasta la próxima.')
+        time.sleep(5)
+        sys.exit()
+    else:
+        print(fallo)
+        fin_del_juego()
 inicio()
