@@ -277,6 +277,8 @@ def el_rescate_del_unicornio():
     print('La reina da una vuelta al rededor del animal y el árbol, cuidadosamente analizando la situación. Después de unos minutos decide que solo hay tres cosas que pueden intentar:')
     estrategia_de_rescate()
 
+# Sistema  de rescate
+
 def estrategia_de_rescate():
     decision = str(input('Levantar el árbol con "fuerza" bruta, levantar el árbol usando otro árbol o rama como "palanca" o intentar "llamar" mas tarde a los guardias forestales del vecino reino de España.\n'))
     if decision == 'fuerza':
@@ -336,6 +338,8 @@ def estrategia_de_rescate():
         print(fallo)
         estrategia_de_rescate()
 
+# Llamada a la policía
+
 def llamada_a_la_policía():
     print('Llegando al castillo el teléfono de Sandra recupera la suficiente cobertura como para poder hacer una llamada. Dado que es una reina, Sandra no llama a la guardia forestal directamente, eso es poca cosa para ella, ella llama al ministerio de exteriores español, al despacho del ministro nada menos.')
     print('- Despacho del Ministro de Exteriores. El señor ministro ahora esta ocupado en una reunión. Si es tan amable de dejar un mensaje conmigo, su secretaria, se lo haré llegar lo antes posible.')
@@ -366,6 +370,8 @@ def llamada_a_la_policía():
         print('Por supuesto majestad, estarán en la puerta de su castillo lo antes posible.')
         llegada_de_la_ayuda()
 
+# Primer final
+
 def llegada_de_la_ayuda(gudetama):
     print('Sandra y Valeria se sientan nerviosamente a esperar.')
     if gudetama == False:
@@ -390,9 +396,11 @@ def ascenso_a_la_montaña(unicornio_salvado):
     else:
         print('Con la precaución por bandera y la seguridad de Valeria en mente la reina decidió ignorar el sospechoso bulto en el bosque y continuar con su camino.')
         ataque_aéreo()
-    
-    
+    print('Al llegar al pie de la montaña tranquilamente empezaron el ascenso, no era una una pendiente muy inclinada y se subía con facilidad. Según van subiendo el bosque muy lentamente empieza a despejarse, no tanto como para que vieran menos árboles, pero les daban mas a menudo los rayos del sol.')
+    bifurcación()
 
+def bifurcación():
+    dirección = input(int('Según van subiendo la montaña se encuentran una bifurcación. Los caminos son prácticamente iguales'))
     
 
 def entrada_al_bosque():
