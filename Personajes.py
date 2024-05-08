@@ -423,6 +423,7 @@ def bifurcación():
         print(fallo)
         bifurcación()
 
+# Introducción al dios tallarín
 def cueva():
     print('Sus altezas se deciden por la ruta de la derecha intentando no hacerle mucho caso a ese extraño sentimiento que les inunda el pecho con cada paso que dan. Al cavo de unos minutos consiguen olvidar la extraña sensación y vuelven a disfrutar del paseo y el suave ascenso a la cima.')
     print('Como a tres cuartas partes de la altura de ascenso total se encuentran con una cueva. Generalmente Sandra ignoraría la cueva, sabe que son peligrosas, en ellas viven animales que pueden atacar si se sienten amenazados, sin luz, pueden tropezarse, o incluso podría haber algún socavón profundo. Pero parecía haber una hoguera al fondo y la reina definitivamente quería averiguar si alguien más vivía en su reino, ella no toleraría invasores bajo ninguna circunstancia.')
@@ -433,7 +434,15 @@ def cueva():
     print('Sandra:\n-¿Quien es usted y que quiere? No voy a tolerar la presencia de desconocidos en mi reino')
     print('Anciano:\n-Quien soy no es importe y le garantizo que mi presencia no tendrá que ser tolerada por mucho tiempo, pase lo que pase, para esta noche me habré marchado. Ahora mismo, en la cima de la montaña se esta realizando un ritual prohibido si lo llevan a cabo con éxito el resultado puede ser impredecible. Es vuestro reino y vuestro amigo, eso lo hace vuestra responsabilidad. Yo puedo o no ayudaros, pero de nuevo vuestra responsabilidad, vuestra decision.')
     print('Sandra:\n-¿Como que mi amigo?¿Y un ritual?¿Que ritual?\nValeria no paraba de mirar alrededor, no entendía lo que estaba pasando pero era muy inteligente y observadora. Rápidamente se dio cuenta de que la sombra del anciano era extraña, parecía una gran pelota pero no era perfectamente redonda tenia bultos, como si fuera un ovillo de cables y tenia dos grandes y largos brazos, lisos, algo perecido a tentáculos. También se dio cuenta de que había una lata en el fuego con lo que parecía una albóndiga flotando encima y su túnica parecía hecha por alguna clase de fibra gruesa o tejido extraño, realmente parecían espaguetis, pero eso no podía ser.')
-    
+    print('Valeria también se dio cuenta de que la actitud del anciano no era una que había visto nunca, el anciano no parecía estar ahi o tratarlas como si realmente estuvieran allí, no podía explicárselo bien a si misma, pero la sensación que tenia era que el anciano estaba simplemente paseando por el zoo y ellas eran una atracción sin importancia, algo como las cabras, que te paras un momento a verlas y te pueden hacer gracia pero si no estuvieran tampoco son la razón para ir al zoo')  
+    print('Anciano:\n-Majestad esas preguntas se vas a responder solas para ti y no son interesantes para mi pero quisiera ayudar.¿Estaríais dispuestas a responder a mis preguntas, es importante para saber como puedo ayudar mejor a sus majestades?')
+    print('Sandra:\n-¡¿Tu te crees que somos tus monos de feria?! Vete a...\n El anciano hizo un gesto provocando que la reina se callara en ese instante.')
+    cuestionario_tallarín
+
+def cuestionario_tallarín():
+    cuestionario = input(str('Si no quieres mi ayuda dilo, pero estoy buscando un "sí" o un "no", el resto es innecesario y no tenéis tiempo.'))
+    if cuestionario == 'sí':
+        print('Después de pensarlo por un momento la reina miro a Valeria y esta asintió con la cabeza como diciendo adelante')
 
 def cumbre_de_la_montaña():
     print('culo')
