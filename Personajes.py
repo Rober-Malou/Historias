@@ -1,6 +1,6 @@
 # Librerías importadas
 
-import random, emoji, time, sys
+import random, emoji, time, sys, os
 
 # Plantilla personajes
 
@@ -440,10 +440,38 @@ def cueva():
     cuestionario_tallarín
 
 def cuestionario_tallarín():
-    cuestionario = input(str('Si no quieres mi ayuda dilo, pero estoy buscando un "sí" o un "no", el resto es innecesario y no tenéis tiempo.'))
-    if cuestionario == 'sí':
-        print('Después de pensarlo por un momento la reina miro a Valeria y esta asintió con la cabeza como diciendo adelante')
+    errores = 0
+    if errores <2:
+        cuestionario = input(str('Si no quieres mi ayuda dilo, pero estoy buscando un "sí" o un "no", el resto es innecesario y no tenéis tiempo.'))
+        if cuestionario == 'sí':
+            print('Después de pensarlo por un momento la reina miro a Valeria y esta asintió con la cabeza como diciendo adelante. Sandra realmente no quería jugar con el extraño, pero pensó que quizá podría sacarle mas información de esta manera.')
+            print('Sandra:\n-SI')
+        elif cuestionario == 'no':
+            print('Sandra no se va dejar llevar por alguien asi, enigmas y mareos no son su estilo, ella no puede entretener los caprichos de desconocidos ella ha vivido suficientes tonterías ya.')
+            print('Sandra:\n -NO\nLa determinación en la cara de la reina era incuestionable, no merecía la pena intentar hacerla cambiar de idea y el anciano lo sabia.')
+            carisma_final = sandra.carisma + golpe_de_suerte(sandra)
+            if carisma_final >= 10:
+                print('Anciano:\n-No esperaba otra cosa de ti, pero me alegro de que seas capaz de mantenerte firme, yo me voy a marchar ahora, espero que os valla bien lo que os queda de dia, os va a hacer falta.')
+            else:
+                reset()
+                
+def reset():
+    while sandra != Personaje('Sandra', 'Mujer', 'Humana', 6, 8, 7, 5, True):
+        sandra = Personaje('Sandra', 'Mujer', 'Humana', 6, 8, 7, 5, True)
+    while valeria != Personaje('Valeria', 'Mujer', 'Humana', 3, 6, 9, 6, False):
+        valeria = Personaje('Valeria', 'Mujer', 'Humana', 3, 6, 9, 6, False)
+    while unicornio_salvado != False:
+        global unicornio_salvado
+        unicornio_salvado = False
+    while choice1 != 0:
+        global choice1
+        choice1 = 0
+    while gudetama != True:
+        global gudetama 
+        gudetama = True
+    os.system('cls')
 
+    
 def cumbre_de_la_montaña():
     print('culo')
 
