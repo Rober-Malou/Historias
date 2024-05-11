@@ -1,7 +1,6 @@
 # Librerías importadas
 
-import random, emoji, time, sys, os
-
+import random, emoji, time, sys, subprocess
 # Plantilla personajes
 
 class Personaje:
@@ -30,8 +29,9 @@ def ataque_aéreo():
         print('Sandra y Valeria ven como uno de los pájaros aligera su carga justo donde están ellas, pero gracias a sus reflejos felinos lo esquivan en el ultimo momento y siguen tan tranquila con tu paseo.')
 
 # Distintos personajes
-
+global sandra
 sandra = Personaje('Sandra', 'Mujer', 'Humana', 6, 8, 7, 5, True)
+global valeria
 valeria = Personaje('Valeria', 'Mujer', 'Humana', 3, 6, 9, 6, False)
 
 # Mensajes de Error
@@ -44,6 +44,9 @@ nota_de_autor= 'Nota del autor: Se ve que la he liado parda aquí'
 unicornio = 'Sandra y Valeria se dan cuenta de lo tarde que es, y se preparan para cenar e irse a la cama con la alegría de haber sido capaces de ayudar a una criatura tan magnifica. Desde ese dia y como agradecimiento, todos los días al despertar, verían como un cálido arcoíris entraba por su ventana'
 
 # Variables de contador
+
+global errores
+errores = 0
 
 global unicornio_salvado
 unicornio_salvado = False
@@ -338,7 +341,7 @@ def estrategia_de_rescate():
             print('Intentan buscar otro palo que les sirva pero sin suerte no quedándoles más remedio que volver al castillo a llamar a los guardas forestales.')
             print('Se despiden del unicornio prometíendole volver con ayuda y se dirigen de vuelta al castillo donde hay cobertura.')
             llamada_a_la_policía()
-    elif decision == 'llamada':
+    elif decision == 'llamar':
         print('La reina y la princesa después de considerar sus opciones llegan a la conclusión de que su mejor opción es llamar a la guardia forestal del reino de España. Se despiden del unicornio augurándole que volverán a ayudarlo y comienzan a caminar dirección al castillo, donde hay cobertura.')
         llamada_a_la_policía()
     else:
@@ -437,44 +440,63 @@ def cueva():
     print('Valeria también se dio cuenta de que la actitud del anciano no era una que había visto nunca, el anciano no parecía estar ahi o tratarlas como si realmente estuvieran allí, no podía explicárselo bien a si misma, pero la sensación que tenia era que el anciano estaba simplemente paseando por el zoo y ellas eran una atracción sin importancia, algo como las cabras, que te paras un momento a verlas y te pueden hacer gracia pero si no estuvieran tampoco son la razón para ir al zoo')  
     print('Anciano:\n-Majestad esas preguntas se vas a responder solas para ti y no son interesantes para mi pero quisiera ayudar.¿Estaríais dispuestas a responder a mis preguntas, es importante para saber como puedo ayudar mejor a sus majestades?')
     print('Sandra:\n-¡¿Tu te crees que somos tus monos de feria?! Vete a...\n El anciano hizo un gesto provocando que la reina se callara en ese instante.')
-    cuestionario_tallarín
+    cuestionario_tallarín()
 
 def cuestionario_tallarín():
-    errores = 0
+    global errores
     if errores <2:
         cuestionario = input(str('Si no quieres mi ayuda dilo, pero estoy buscando un "sí" o un "no", el resto es innecesario y no tenéis tiempo.'))
         if cuestionario == 'sí':
             print('Después de pensarlo por un momento la reina miro a Valeria y esta asintió con la cabeza como diciendo adelante. Sandra realmente no quería jugar con el extraño, pero pensó que quizá podría sacarle mas información de esta manera.')
             print('Sandra:\n-SI')
+            verdad_o_mentira()
         elif cuestionario == 'no':
             print('Sandra no se va dejar llevar por alguien asi, enigmas y mareos no son su estilo, ella no puede entretener los caprichos de desconocidos ella ha vivido suficientes tonterías ya.')
             print('Sandra:\n -NO\nLa determinación en la cara de la reina era incuestionable, no merecía la pena intentar hacerla cambiar de idea y el anciano lo sabia.')
             carisma_final = sandra.carisma + golpe_de_suerte(sandra)
             if carisma_final >= 10:
                 print('Anciano:\n-No esperaba otra cosa de ti, pero me alegro de que seas capaz de mantenerte firme, yo me voy a marchar ahora, espero que os valla bien lo que os queda de dia, os va a hacer falta.')
+                cumbre_de_la_montaña()
             else:
-                reset()
+                reset(sandra, valeria)
+        else:
+            errores += 1
+            print(fallo)
+            cuestionario_tallarín()
+    else:
+        reset()
+    
                 
 def reset():
+    global sandra
+    global valeria
+    global unicornio_salvado
+    global choice1
+    global gudetama
     while sandra != Personaje('Sandra', 'Mujer', 'Humana', 6, 8, 7, 5, True):
         sandra = Personaje('Sandra', 'Mujer', 'Humana', 6, 8, 7, 5, True)
+        break
     while valeria != Personaje('Valeria', 'Mujer', 'Humana', 3, 6, 9, 6, False):
         valeria = Personaje('Valeria', 'Mujer', 'Humana', 3, 6, 9, 6, False)
+        break
     while unicornio_salvado != False:
-        global unicornio_salvado
         unicornio_salvado = False
+        break
     while choice1 != 0:
-        global choice1
         choice1 = 0
-    while gudetama != True:
-        global gudetama 
+        break
+    while gudetama != True: 
         gudetama = True
-    os.system('cls')
+        break
+    subprocess.run('cls', shell=True)
+    inicio()
 
     
 def cumbre_de_la_montaña():
     print('culo')
 
+def verdad_o_mentira():
+    print()
 # Segundo final posible
  
 def retorno_al_castillo():
@@ -506,7 +528,7 @@ def entrada_al_bosque():
 def fin_del_juego():
     que_hacer = input(str('¿Quieres volver a "jugar" o "dejarlo" por el momento?\n'))
     if que_hacer == 'jugar':
-        inicio()
+        reset()
     elif que_hacer == 'dejarlo':
         print('Hasta la próxima.')
         time.sleep(5)
