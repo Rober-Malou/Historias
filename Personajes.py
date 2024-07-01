@@ -59,7 +59,7 @@ gudetama = True
 
 # Obertura
 
-print('Vienvenid@ espero que disfrutes esta corta historia interactiva y que su Tallarisca magnificencia te guie por el buen camino.')
+print('Bienvenid@ espero que disfrutes esta corta historia interactiva y que su Tallarisca magnificencia te guie por el buen camino.')
 
 # Explicación del juego
 
@@ -380,26 +380,7 @@ def llamada_a_la_policía():
         print('Por supuesto majestad, estarán en la puerta de su castillo lo antes posible.')
         llegada_de_la_ayuda()
 
-# Primer final
 
-def llegada_de_la_ayuda():
-    print('Sandra y Valeria se sientan nerviosamente a esperar.')
-    if gudetama == False:
-        print('Sakipillo les trae una selección de bebidas (zumos, coca-cola, fanta, café, etc) y les sirve algo ellas mientras esperan a que lleguen los refuerzos.')
-    elif gudetama == True:
-        print('Sakipillo y Gudetama les traen una selección de bebidas (zumos, coca-cola, fanta, café, etc) y les sirven algo mientras ellas esperan a que lleguen los refuerzos.')
-    else:
-        print('Nota del autor: No tengo ni idea de que ha pasado aquí, la idea es que si elegiste comerte a Gudetama solo Sakipillo les llevaría unas bebidas, si no los 2, pero algo salio mal.')
-    print('A las pocas horas llegaron los guardias forestales. Llegaron en varias camionetas llenas hasta arriba de motosierras, poleas, cuerdas, sierras... Todo lo que puedas imaginar necesario o util para rescatar a cualquiera o cualquier cosa de debajo de un árbol.')
-    print('La reina y la princesa rápidamente les guían hacia el lugar donde el unicornio esta atrapado. Cuando llegan al lugar Sandra y Valeria rápidamente van a confortar y calmar a la criatura mientras los guardias forestales se ponen manos a la obra.')
-    print('Un pequeño grupo vuelve a por las herramientas necesarias que estaban en las camionetas, el resto se pone a calzar y montar soportes para sujetar el árbol para aliviar la presión del animal y protegerlo en caso de que algo saliera mal durante el rescate.')
-    print('Después atan unas cuerdas al árbol y las pasan por unas poleas. Cuando están firmemente tensadas y sujetas al suelo empiezan primero a cortar ramas y demás cosas que podrían resultar peligrosas. Cuando todo eso por fin esta echo empiezan a cortar una gran sección del árbol.')
-    print('Cuando por fin terminan de cortar el tronco lo levantan con ayuda de las poleas. En el momento en el que unicornio tiene suficiente espacio para moverse se ve un cegador destello de luz arcoíris, para cuando los allí presentes pudieron recuperar la vista no había rastro del unicornio por ninguna parte.')
-    print('La princesa y la reina volvieron con los guardas al palacio. Al llegar los guardas forestales hicieron un saludo militar y pusieron rumbo para España')
-    print(unicornio)
-    print(emoji.emojize('\n\n\n\n\n\n\n\n\n:confetti_ball::confetti_ball::confetti_ball::confetti_ball:!!!!HAS FINALIZADO LA RUTA DE RESCATAR AL UNICORNIO CON AYUDA Y VALERIA¡¡¡¡:confetti_ball::confetti_ball::confetti_ball::confetti_ball:'))
-    fin_del_juego()
-    
 # Camino a la montaña
     
 def ascenso_a_la_montaña():
@@ -427,6 +408,7 @@ def bifurcación():
         bifurcación()
 
 # Introducción al dios tallarín
+
 def cueva():
     print('Sus altezas se deciden por la ruta de la derecha intentando no hacerle mucho caso a ese extraño sentimiento que les inunda el pecho con cada paso que dan. Al cavo de unos minutos consiguen olvidar la extraña sensación y vuelven a disfrutar del paseo y el suave ascenso a la cima.')
     print('Como a tres cuartas partes de la altura de ascenso total se encuentran con una cueva. Generalmente Sandra ignoraría la cueva, sabe que son peligrosas, en ellas viven animales que pueden atacar si se sienten amenazados, sin luz, pueden tropezarse, o incluso podría haber algún socavón profundo. Pero parecía haber una hoguera al fondo y la reina definitivamente quería averiguar si alguien más vivía en su reino, ella no toleraría invasores bajo ninguna circunstancia.')
@@ -442,10 +424,12 @@ def cueva():
     print('Sandra:\n-¡¿Tu te crees que somos tus monos de feria?! Vete a...\n El anciano hizo un gesto provocando que la reina se callara en ese instante.')
     cuestionario_tallarín()
 
+# Pruebas del dios Tallarín
+
 def cuestionario_tallarín():
     global errores
     if errores <2:
-        cuestionario = input(str('Si no quieres mi ayuda dilo, pero estoy buscando un "sí" o un "no", el resto es innecesario y no tenéis tiempo.'))
+        cuestionario = input(str('Si no quieres mi ayuda dilo, pero estoy buscando un "sí" o un "no", el resto es innecesario y no tenéis tiempo.\n'))
         if cuestionario == 'sí':
             print('Después de pensarlo por un momento la reina miro a Valeria y esta asintió con la cabeza como diciendo adelante. Sandra realmente no quería jugar con el extraño, pero pensó que quizá podría sacarle mas información de esta manera.')
             print('Sandra:\n-SI')
@@ -466,30 +450,6 @@ def cuestionario_tallarín():
     else:
         reset()
     
-                
-def reset():
-    global sandra
-    global valeria
-    global unicornio_salvado
-    global choice1
-    global gudetama
-    while sandra != Personaje('Sandra', 'Mujer', 'Humana', 6, 8, 7, 5, True):
-        sandra = Personaje('Sandra', 'Mujer', 'Humana', 6, 8, 7, 5, True)
-        break
-    while valeria != Personaje('Valeria', 'Mujer', 'Humana', 3, 6, 9, 6, False):
-        valeria = Personaje('Valeria', 'Mujer', 'Humana', 3, 6, 9, 6, False)
-        break
-    while unicornio_salvado != False:
-        unicornio_salvado = False
-        break
-    while choice1 != 0:
-        choice1 = 0
-        break
-    while gudetama != True: 
-        gudetama = True
-        break
-    subprocess.run('cls', shell=True)
-    inicio()
 
     
 def cumbre_de_la_montaña():
@@ -497,6 +457,27 @@ def cumbre_de_la_montaña():
 
 def verdad_o_mentira():
     print()
+
+# Primer final
+
+def llegada_de_la_ayuda():
+    print('Sandra y Valeria se sientan nerviosamente a esperar.')
+    if gudetama == False:
+        print('Sakipillo les trae una selección de bebidas (zumos, coca-cola, fanta, café, etc) y les sirve algo ellas mientras esperan a que lleguen los refuerzos.')
+    elif gudetama == True:
+        print('Sakipillo y Gudetama les traen una selección de bebidas (zumos, coca-cola, fanta, café, etc) y les sirven algo mientras ellas esperan a que lleguen los refuerzos.')
+    else:
+        print('Nota del autor: No tengo ni idea de que ha pasado aquí, la idea es que si elegiste comerte a Gudetama solo Sakipillo les llevaría unas bebidas, si no los 2, pero algo salio mal.')
+    print('A las pocas horas llegaron los guardias forestales. Llegaron en varias camionetas llenas hasta arriba de motosierras, poleas, cuerdas, sierras... Todo lo que puedas imaginar necesario o util para rescatar a cualquiera o cualquier cosa de debajo de un árbol.')
+    print('La reina y la princesa rápidamente les guían hacia el lugar donde el unicornio esta atrapado. Cuando llegan al lugar Sandra y Valeria rápidamente van a confortar y calmar a la criatura mientras los guardias forestales se ponen manos a la obra.')
+    print('Un pequeño grupo vuelve a por las herramientas necesarias que estaban en las camionetas, el resto se pone a calzar y montar soportes para sujetar el árbol para aliviar la presión del animal y protegerlo en caso de que algo saliera mal durante el rescate.')
+    print('Después atan unas cuerdas al árbol y las pasan por unas poleas. Cuando están firmemente tensadas y sujetas al suelo empiezan primero a cortar ramas y demás cosas que podrían resultar peligrosas. Cuando todo eso por fin esta echo empiezan a cortar una gran sección del árbol.')
+    print('Cuando por fin terminan de cortar el tronco lo levantan con ayuda de las poleas. En el momento en el que unicornio tiene suficiente espacio para moverse se ve un cegador destello de luz arcoíris, para cuando los allí presentes pudieron recuperar la vista no había rastro del unicornio por ninguna parte.')
+    print('La princesa y la reina volvieron con los guardas al palacio. Al llegar los guardas forestales hicieron un saludo militar y pusieron rumbo para España')
+    print(unicornio)
+    print(emoji.emojize('\n\n\n\n\n\n\n\n\n:confetti_ball::confetti_ball::confetti_ball::confetti_ball:!!!!HAS FINALIZADO LA RUTA DE RESCATAR AL UNICORNIO CON AYUDA Y VALERIA¡¡¡¡:confetti_ball::confetti_ball::confetti_ball::confetti_ball:'))
+    fin_del_juego()
+    
 # Segundo final posible
  
 def retorno_al_castillo():
@@ -524,6 +505,32 @@ def retorno_al_castillo():
 
 def entrada_al_bosque():
     print('pedo')
+
+# Funcion que reinicia el juego desde 0 y borra la consola
+        
+def reset():
+    global sandra
+    global valeria
+    global unicornio_salvado
+    global choice1
+    global gudetama
+    while sandra != Personaje('Sandra', 'Mujer', 'Humana', 6, 8, 7, 5, True):
+        sandra = Personaje('Sandra', 'Mujer', 'Humana', 6, 8, 7, 5, True)
+        break
+    while valeria != Personaje('Valeria', 'Mujer', 'Humana', 3, 6, 9, 6, False):
+        valeria = Personaje('Valeria', 'Mujer', 'Humana', 3, 6, 9, 6, False)
+        break
+    while unicornio_salvado != False:
+        unicornio_salvado = False
+        break
+    while choice1 != 0:
+        choice1 = 0
+        break
+    while gudetama != True: 
+        gudetama = True
+        break
+    subprocess.run('cls', shell=True)
+    inicio()
 
 def fin_del_juego():
     que_hacer = input(str('¿Quieres volver a "jugar" o "dejarlo" por el momento?\n'))
