@@ -432,11 +432,11 @@ def cuestionario_tallarín():
         cuestionario = input(str('Si no quieres mi ayuda dilo, pero estoy buscando un "sí" o un "no", el resto es innecesario y no tenéis tiempo.\n'))
         if cuestionario == 'sí':
             print('Después de pensarlo por un momento la reina miro a Valeria y esta asintió con la cabeza como diciendo adelante. Sandra realmente no quería jugar con el extraño, pero pensó que quizá podría sacarle mas información de esta manera.')
-            print('Sandra:\n-SI')
+            print('Sandra:\n    -SI')
             verdad_o_mentira()
         elif cuestionario == 'no':
             print('Sandra no se va dejar llevar por alguien asi, enigmas y mareos no son su estilo, ella no puede entretener los caprichos de desconocidos ella ha vivido suficientes tonterías ya.')
-            print('Sandra:\n -NO\nLa determinación en la cara de la reina era incuestionable, no merecía la pena intentar hacerla cambiar de idea y el anciano lo sabia.')
+            print('Sandra:\n    -NO\nLa determinación en la cara de la reina era incuestionable, no merecía la pena intentar hacerla cambiar de idea y el anciano lo sabia.')
             carisma_final = sandra.carisma + golpe_de_suerte(sandra)
             if carisma_final >= 10:
                 print('Anciano:\n-No esperaba otra cosa de ti, pero me alegro de que seas capaz de mantenerte firme, yo me voy a marchar ahora, espero que os valla bien lo que os queda de dia, os va a hacer falta.')
@@ -449,14 +449,17 @@ def cuestionario_tallarín():
             cuestionario_tallarín()
     else:
         reset()
-    
 
-    
+# Bonus de ayuda del dios tallarin
+def verdad_o_mentira():
+    global errores
+    if errores < 4:
+        print('Anciano:\n   -Primero vamos a ver cual de sus majestades esta mas en sincronia con el universo hoy dado que la elegida sera la responsable te terminar con el peligro que os aguarda.\n')
+        print('Las llamas de la hoguera se vuelven mas violentas y poco a poco van adquiriendo un tono extraño')
+        cuestionario = input(str(''))
+
 def cumbre_de_la_montaña():
     print('culo')
-
-def verdad_o_mentira():
-    print()
 
 # Primer final
 
