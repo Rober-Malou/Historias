@@ -48,6 +48,9 @@ unicornio = 'Sandra y Valeria se dan cuenta de lo tarde que es, y se preparan pa
 global errores
 errores = 0
 
+global eleccion
+eleccion = random.randint(0, 1)
+
 global unicornio_salvado
 unicornio_salvado = False
 
@@ -455,7 +458,13 @@ def verdad_o_mentira():
     global errores
     if errores < 4:
         print('Anciano:\n   -Primero vamos a ver cual de sus majestades esta mas en sincronia con el universo hoy dado que la elegida sera la responsable te terminar con el peligro que os aguarda.\n')
-        print('Las llamas de la hoguera se vuelven mas violentas y poco a poco van adquiriendo un tono extraño')
+        print('Las llamas de la hoguera se vuelven mas violentas y poco a poco van adquiriendo un tono extraño, al cabo de unos segundos los colores se dividen como un arcoiris o la melena de un unicornio.')
+        print('Poco a poco el fuego parece cobrar vida, parece danzar con voluntad propia. De repentes el fuego salta de la hoguera y empieza a girar al rededor de sus majestades.')
+        
+        global eleccion
+        if eleccion == 0:
+
+
         cuestionario = input(str(''))
 
 def cumbre_de_la_montaña():
