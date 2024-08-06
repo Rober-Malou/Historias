@@ -457,12 +457,17 @@ def cuestionario_tallarín():
 def verdad_o_mentira():
     global errores
     if errores < 4:
-        print('Anciano:\n   -Primero vamos a ver cual de sus majestades esta mas en sincronia con el universo hoy dado que la elegida sera la responsable te terminar con el peligro que os aguarda.\n')
+        print('Anciano:\n   -Primero vamos a ver cual de sus majestades esta mas en sincronía con el universo hoy dado que la elegida sera la responsable te terminar con el peligro que os aguarda.\n')
         print('Las llamas de la hoguera se vuelven mas violentas y poco a poco van adquiriendo un tono extraño, al cabo de unos segundos los colores se dividen como un arcoiris o la melena de un unicornio.')
         print('Poco a poco el fuego parece cobrar vida, parece danzar con voluntad propia. De repentes el fuego salta de la hoguera y empieza a girar al rededor de sus majestades.')
         
         global eleccion
         if eleccion == 0:
+            print('Las llamas giran mas y mas rápido, produciendo colores mas y mas brillantes y mas y mas hermosos las llamas de repente pegan un giro brusco y empiezan solo a dar vueltas al rededor de Valeria, pareciendo indicar que ella es la elegida.')
+            print('A los pocos segundos la llama pasa a traves del corazon de la joven princesa. Sandra y Valeria se asustan por un instante pero rapidamente se dan cuenta de que no ha pasado nada')
+            print('Momentos despues las llamas se detuvieron en frente de la Princesa y formaron una perfecta esfera con los colores de las llamas, practicamente brillaba con luz propia')
+            print('Anciano:\n   -Parece ser que la joven princesa ha sido elegida para jugar la parte determinante en la proxima batalla. -El anciano se acerca a Valeria, se arrodilla y la mira directamente a los ojos. -Deves estar atenta joven princesa, usala cuando te encuentres rodeada por la sustancian de la cual viene la vida y todo ira bien.')
+            
 
 
         cuestionario = input(str(''))
