@@ -48,8 +48,8 @@ unicornio = 'Sandra y Valeria se dan cuenta de lo tarde que es, y se preparan pa
 global errores
 errores = 0
 
-global eleccion
-eleccion = random.randint(0, 1)
+global elección
+elección = random.randint(0, 1)
 
 global unicornio_salvado
 unicornio_salvado = False
@@ -62,7 +62,7 @@ gudetama = True
 
 # Obertura
 
-print('Bienvenid@ espero que disfrutes esta corta historia interactiva y que su Tallarisca magnificencia te guie por el buen camino.')
+print('Bienvenid@ espero que disfrutes esta corta historia interactiva y que su Tallarinesca magnificencia te guie por el buen camino.')
 
 # Explicación del juego
 
@@ -172,7 +172,7 @@ def el_desayuno():
 # Que Desayunar con Valeria
 
 def decision3 ():
-    decision = str(input('Shakipillo:\n - ¿Que queréis desayunar hoy mamis? Podemos prepararos "cereales", "bollos", o "huevos" con bacon\n'))
+    decision = str(input('Sakipillo:\n - ¿Que queréis desayunar hoy mamis? Podemos prepararos "cereales", "bollos", o "huevos" con bacon\n'))
     if decision == 'cereales':
         print('Gudetama:\n - Que pereza.')
         print('Se ponen a preparar el desayuno a toda velocidad, en menos de 30 segundos todo esta listo y lo sirven en el patio. \n Sus majestades desayunan tranquilamente, con el sol dándoles en la cara. Durante el desayuno charlan animadamente y deciden ir a dar un paseo por el bosque.')
@@ -182,7 +182,7 @@ def decision3 ():
     elif decision == 'bollos':
         print('Gudetama:\n - Que pereza.')
         print('Gudetama pone a precalentar el horno mientras Sakipillo abre el congelador y saca varias pastas congeladas. Las coloca en una bandeja y las mete en el horno, mientras las pastas se hacen le sirven zumo en el patio a sus "mamis". Mientras Sandra y Valeria esperan tranquilamente contemplando la naturaleza.')
-        print('A los pocos minutos Shakipillo y Gudetama vuelven con mini cruasanes, mantequilla y mermelada y varias mini napolitanas de chocolate. \n Tras desayunar, sus majestades deciden ir a dar un paseo en el Bosque.')
+        print('A los pocos minutos Sakipillo y Gudetama vuelven con mini cruasanes, mantequilla y mermelada y varias mini napolitanas de chocolate. \n Tras desayunar, sus majestades deciden ir a dar un paseo en el Bosque.')
         sandra.fuerza += 1
         valeria.fuerza += 1
         sandra.carisma += 1
@@ -209,7 +209,7 @@ def decision3 ():
 # Que Desayunar Sola
 
 def decision4():
-    decision = str(input('Shakipillo:\n - ¿Que quieres desayunar hoy mami? Tenemos "cereales", "bollos", o "huevos" con bacon?\n'))
+    decision = str(input('Sakipillo:\n - ¿Que quieres desayunar hoy mami? Tenemos "cereales", "bollos", o "huevos" con bacon?\n'))
     if decision == 'cereales':
         print('Gudetama:\n - Que pereza.')
         print('Se ponen a preparar el desayuno a toda velocidad, en menos de 30 segundos todo esta listo y se lo sirven en el patio. \n Desayuna tranquilamente, con el sol dándole en la cara.')
@@ -356,7 +356,7 @@ def estrategia_de_rescate():
 def llamada_a_la_policía():
     print('Llegando al castillo el teléfono de Sandra recupera la suficiente cobertura como para poder hacer una llamada. Dado que es una reina, Sandra no llama a la guardia forestal directamente, eso es poca cosa para ella, ella llama al ministerio de exteriores español, al despacho del ministro nada menos.')
     print('- Despacho del Ministro de Exteriores. El señor ministro ahora esta ocupado en una reunión. Si es tan amable de dejar un mensaje conmigo, su secretaria, se lo haré llegar lo antes posible.')
-    print('-Buenos días. Soy su majestad la reina Sandra legitima soberana de HASTA EL COÑO Y MAS ALLÁ. Necesito hablar inmediatamente con el señor ministro. Tengo una situación de máxima urgencia asi que paseme con el INMEDIATAMENTE.')
+    print('-Buenos días. Soy su majestad la reina Sandra legitima soberana de HASTA EL COÑO Y MAS ALLÁ. Necesito hablar inmediatamente con el señor ministro. Tengo una situación de máxima urgencia asi que pasemé con el INMEDIATAMENTE.')
     suerte_sandra = golpe_de_suerte(sandra)
     negociación = suerte_sandra + sandra.carisma
     if negociación > 8:
@@ -453,24 +453,43 @@ def cuestionario_tallarín():
     else:
         reset()
 
-# Bonus de ayuda del dios tallarin
+# Bonus de ayuda del dios tallarín
 def verdad_o_mentira():
-    global errores
-    if errores < 4:
-        print('Anciano:\n   -Primero vamos a ver cual de sus majestades esta mas en sincronía con el universo hoy dado que la elegida sera la responsable te terminar con el peligro que os aguarda.\n')
-        print('Las llamas de la hoguera se vuelven mas violentas y poco a poco van adquiriendo un tono extraño, al cabo de unos segundos los colores se dividen como un arcoiris o la melena de un unicornio.')
-        print('Poco a poco el fuego parece cobrar vida, parece danzar con voluntad propia. De repentes el fuego salta de la hoguera y empieza a girar al rededor de sus majestades.')
+    print('Anciano:\n   -Primero vamos a ver cual de sus majestades esta mas en sincronía con el universo hoy dado que la elegida sera la responsable te terminar con el peligro que os aguarda.\n')
+    print('Las llamas de la hoguera se vuelven mas violentas y poco a poco van adquiriendo un tono extraño, al cabo de unos segundos los colores se dividen como un arcoíris o la melena de un unicornio.')
+    print('Poco a poco el fuego parece cobrar vida, parece danzar con voluntad propia. De repentes el fuego salta de la hoguera y empieza a girar al rededor de sus majestades.')
         
-        global eleccion
-        if eleccion == 0:
-            print('Las llamas giran mas y mas rápido, produciendo colores mas y mas brillantes y mas y mas hermosos las llamas de repente pegan un giro brusco y empiezan solo a dar vueltas al rededor de Valeria, pareciendo indicar que ella es la elegida.')
-            print('A los pocos segundos la llama pasa a traves del corazon de la joven princesa. Sandra y Valeria se asustan por un instante pero rapidamente se dan cuenta de que no ha pasado nada')
-            print('Momentos despues las llamas se detuvieron en frente de la Princesa y formaron una perfecta esfera con los colores de las llamas, practicamente brillaba con luz propia')
-            print('Anciano:\n   -Parece ser que la joven princesa ha sido elegida para jugar la parte determinante en la proxima batalla. -El anciano se acerca a Valeria, se arrodilla y la mira directamente a los ojos. -Deves estar atenta joven princesa, usala cuando te encuentres rodeada por la sustancian de la cual viene la vida y todo ira bien.')
-            
+    global elección
+    if elección == 0:
+        print('Las llamas giran mas y mas rápido, produciendo colores mas y mas brillantes y mas y mas hermosos las llamas de repente pegan un giro brusco y empiezan solo a dar vueltas al rededor de Valeria, pareciendo indicar que ella es la elegida.')
+        print('A los pocos segundos la llama pasa a través del corazón de la joven princesa. Sandra y Valeria se asustan por un instante pero rápidamente se dan cuenta de que no ha pasado nada')
+        print('Momentos después las llamas se detuvieron en frente de la Princesa y formaron una perfecta esfera con los colores de las llamas, prácticamente brillaba con luz propia')
+        print('Anciano:\n   -Parece ser que la joven princesa ha sido elegida para jugar la parte determinante en la próxima batalla. -El anciano se acerca a Valeria, se arrodilla y la mira directamente a los ojos. -Debes estar atenta joven princesa, úsala cuando te encuentres rodeada por la sustancian de la cual viene la vida y todo ira bien.')
+        print('Acto seguido el anciano desapareció dejando detrás solo la hoguera y por alguna razón un plato de tallarines con albóndigas')
+        cumbre_de_la_montaña_valeria()
+        
+    elif elección == 1:
+        print('Las llamas giran mas y mas rápido, produciendo colores mas y mas brillantes y mas y mas hermosos las llamas de repente pegan un giro brusco y empiezan solo a dar vueltas al rededor de Sandra, pareciendo indicar que ella es la elegida.')
+        print('A los pocos segundos la llama pasa a través del corazón de la reina. Sandra y Valeria se asustan por un instante pero rápidamente se dan cuenta de que no ha pasado nada.')
+        print('Momentos después las llamas se detuvieron en frente de su majestad y formaron una perfecta esfera con los colores de las llamas, prácticamente brillaba con luz propia')
+        print('Anciano:\n   -Majestad, vos sois la elegida para inclinar la balanza en la batalla final. -El anciano anima con un gesto a que la reina se guarde la esfera en los bolsillos y se acerca a ella. -Recuerde majestad que esta esfera no solo es para poder derrotar al enemigo que les espera arriba si no tambien para poder sanar un mundo roto, intente no usarla antes de tiempo.')
+        print('Acto seguido el anciano desapareció dejando detrás solo la hoguera y por alguna razón un plato de tallarines con albóndigas')
+        cumbre_de_la_montaña_sandra()
+    else:
+        print('Algo se ha roto')
+        verdad_o_mentira()
 
+# Final de la historia cuando la elegida es sandra
+def cumbre_de_la_montaña_sandra():
+    print('Justo en ese momento sus majestades escuchan escuchan un estruendo, si no fuera imposible, ellas jurarian que el cielo se habia roto y partido en dos.')
+    print('Salen corriendo a la entrada de la cuenba y miran hacia arriba, efectivamente el cielo se ha partido en dos, se miran la una con panico en la mirada, pensando que quiza ya es demasiado tarde y empiezan a correr montaña arriba ya que no estan demasiado lejos de la cima.')
+    print('Segun van ascendiendo mantienen un ojo clavado en la grieta del cielo y ven como poco a poco una serie de tentaculos gigantes verdes se empiezan a asomar por ella, no demasiado rapido, mas como con curiosidad, como si no esperaran que eso estuviera allí.')
+    print('Poco a poco a poco ven como un indescriptible monstruo gigante se asoma por dicha grieta, tiene unos ojos tan oscuros que parecen absorver la luz de alrededor, bajo los ojos tenia una inumerable cantidad de tentaculos, parecian fuertes y musculosos, con bentosas y garfios gigantescos al rededor de las ventosas, unas alas como de reptil, con garras en cada una de las puntas, pero curiosamente no tenia escamas.')
+    print('De repente parecio cambiar el aire, no sabian bien como explicarlo, era una sensacion que no habian experimentado nunca, las sombras parecian peligrosas, les costaba trabajo concentrarse, hasta el punto de que si no tuvieran las ideas claras y una mision concreta que cumplir, no habrian podido seguir avanzando.')
 
-        cuestionario = input(str(''))
+def cumbre_de_la_montaña_valeria():
+
+    print('pedo')
 
 def cumbre_de_la_montaña():
     print('culo')
@@ -523,7 +542,7 @@ def retorno_al_castillo():
 def entrada_al_bosque():
     print('pedo')
 
-# Funcion que reinicia el juego desde 0 y borra la consola
+# Función que reinicia el juego desde 0 y borra la consola
         
 def reset():
     global sandra
