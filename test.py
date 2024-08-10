@@ -1,4 +1,13 @@
 import random
+import climage 
+
+# converts the image to print in terminal 
+# inform of ANSI Escape codes 
+output = climage.convert('circulo_invocacion.jpg') 
+
+# prints output on console. 
+print(output)
+
 
 global eleccion
 eleccion = random.randint(0, 1)
