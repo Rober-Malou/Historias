@@ -1,10 +1,10 @@
 import random
-import climage 
+import climage
+from PIL import Image
 
 # converts the image to print in terminal 
 # inform of ANSI Escape codes 
-output = climage.convert('circulo_invocacion.jpg') 
-
+output = climage.convert ('circulo_invocacion.jpg', is_unicode=True, width=75)
 # prints output on console. 
 print(output)
 

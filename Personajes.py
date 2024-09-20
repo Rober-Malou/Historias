@@ -472,7 +472,7 @@ def verdad_o_mentira():
         print('Las llamas giran mas y mas rápido, produciendo colores mas y mas brillantes y mas y mas hermosos las llamas de repente pegan un giro brusco y empiezan solo a dar vueltas al rededor de Sandra, pareciendo indicar que ella es la elegida.')
         print('A los pocos segundos la llama pasa a través del corazón de la reina. Sandra y Valeria se asustan por un instante pero rápidamente se dan cuenta de que no ha pasado nada.')
         print('Momentos después las llamas se detuvieron en frente de su majestad y formaron una perfecta esfera con los colores de las llamas, prácticamente brillaba con luz propia')
-        print('Anciano:\n   -Majestad, vos sois la elegida para inclinar la balanza en la batalla final. -El anciano anima con un gesto a que la reina se guarde la esfera en los bolsillos y se acerca a ella. -Recuerde majestad que esta esfera no solo es para poder derrotar al enemigo que les espera arriba si no tambien para poder sanar un mundo roto, intente no usarla antes de tiempo.')
+        print('Anciano:\n   -Majestad, vos sois la elegida para inclinar la balanza en la batalla final. -El anciano anima con un gesto a que la reina se guarde la esfera en los bolsillos y se acerca a ella. -Recuerde majestad que esta esfera no solo es para poder derrotar al enemigo que les espera arriba si no también para poder sanar un mundo roto, intente no usarla antes de tiempo.')
         print('Acto seguido el anciano desapareció dejando detrás solo la hoguera y por alguna razón un plato de tallarines con albóndigas')
         cumbre_de_la_montaña_sandra()
     else:
@@ -481,12 +481,16 @@ def verdad_o_mentira():
 
 # Final de la historia cuando la elegida es sandra
 def cumbre_de_la_montaña_sandra():
-    print('Justo en ese momento sus majestades escuchan escuchan un estruendo, si no fuera imposible, ellas jurarian que el cielo se habia roto y partido en dos.')
-    print('Salen corriendo a la entrada de la cuenba y miran hacia arriba, efectivamente el cielo se ha partido en dos, se miran la una con panico en la mirada, pensando que quiza ya es demasiado tarde y empiezan a correr montaña arriba ya que no estan demasiado lejos de la cima.')
-    print('Segun van ascendiendo mantienen un ojo clavado en la grieta del cielo y ven como poco a poco una serie de tentaculos gigantes verdes se empiezan a asomar por ella, no demasiado rapido, mas como con curiosidad, como si no esperaran que eso estuviera allí.')
-    print('Poco a poco a poco ven como un indescriptible monstruo gigante se asoma por dicha grieta, tiene unos ojos tan oscuros que parecen absorver la luz de alrededor, bajo los ojos tenia una inumerable cantidad de tentaculos, parecian fuertes y musculosos, con bentosas y garfios gigantescos al rededor de las ventosas, unas alas como de reptil, con garras en cada una de las puntas, pero curiosamente no tenia escamas.')
-    print('De repente parecio cambiar el aire, no sabian bien como explicarlo, era una sensacion que no habian experimentado nunca, las sombras parecian peligrosas, les costaba trabajo concentrarse, hasta el punto de que si no tuvieran las ideas claras y una mision concreta que cumplir, no habrian podido seguir avanzando.')
+    print('Justo en ese momento sus majestades escuchan escuchan un estruendo, si no fuera imposible, ellas jurarían que el cielo se había roto y partido en dos.')
+    print('Salen corriendo a la entrada de la cueva y miran hacia arriba, efectivamente el cielo se ha partido en dos, se miran la una con pánico en la mirada, pensando que quizá ya es demasiado tarde y empiezan a correr montaña arriba ya que no están demasiado lejos de la cima.')
+    print('Según van ascendiendo mantienen un ojo clavado en la grieta del cielo y ven como poco a poco una serie de tentáculos gigantes verdes se empiezan a asomar por ella, no demasiado rápido, mas como con curiosidad, como si no esperaran que eso estuviera allí.')
+    print('Poco a poco a poco ven como un indescriptible monstruo gigante se asoma por dicha grieta, tiene unos ojos tan oscuros que parecen absolver la luz de alrededor, bajo los ojos tenia una innumerable cantidad de tentáculos, parecían fuertes y musculosos, con ventosas y garfios gigantescos al rededor de las ventosas, unas alas como de reptil, con garras en cada una de las puntas, pero curiosamente no tenia escamas.')
+    print('De repente pareció cambiar el aire, no sabían bien como explicarlo, era una sensación que no habían experimentado nunca, las sombras parecían peligrosas, les costaba trabajo concentrarse, hasta el punto de que si no tuvieran las ideas claras y una misión concreta que cumplir, no habrían podido seguir avanzando.')
+    print('Al llegar a la cima, hay una pequeña explanada y en ella una ¿Persona?, podria ser alguna clase de mostruo, su tamaño era muy superior a ningun humano que habian visto jamas, el extraño llevaba una larga tunica negra, se encontraba en mitad del circulo de invocacion, parecia estar hablando con Chthulu.')
+    print('Sandra:\n    -Detente ahora mismo, vas a destruir mi reino y matarnos a todos. ¿No has visto el tamaño de ese monstruo?')
+    
 
+# Final de la historia cuando Valeria es la elegida
 def cumbre_de_la_montaña_valeria():
 
     print('pedo')
